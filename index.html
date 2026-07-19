@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zona Style</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body id="inicio">
+    <!-- CARRITO -->
+
+    <div id="carrito">
+
+        <div class="carrito-top">
+
+            <h2>Tu carrito</h2>
+
+            <button onclick="abrirCarrito()">
+                X
+            </button>
+            
+        </div>
+
+        <div id="carrito-items"></div>
+            
+        
+        <div id="datos-cliente">
+            <h3><strong>INGRESE SUS DATOS</strong></h3>
+            <input type="text" id="nombreCliente"
+            placeholder="Nombre completo">
+
+            <input type="text" id="documentoCliente"
+            placeholder="Documento">
+
+            <input type="text" id="telefonoCliente"
+            placeholder="Teléfono">
+
+            <input type="text" id="direccionCliente"
+            placeholder="Dirección">
+
+            <select id="metodoPago">
+                <option>Efectivo</option>
+                <option>Nequi</option>
+                <option>Daviplata</option>
+                <option>Transferencia</option>
+            </select>
+
+            
+
+        </div>
+         
+
+    </div>
+
+    
+<header>
+
+    <div class="menu-icon"
+    onclick="abrirMenu()">
+
+        ☰
+
+    </div>
+
+
+    <h1 class="logo">
+        <a href="#inicio">Zona Style</a>
+    </h1>
+
+    <div class="icons">
+
+        <input
+        type="text"
+        id="buscador"
+        placeholder="Buscar..."
+        onkeyup="if(event.key==='Enter') buscarProductos()">
+
+        <span class="carrito-icon"
+         onclick="abrirCarrito()">
+            🛒 
+            <span id="contador">0</span>
+        </span>
+
+     </div>
+
+</header>
+
+<!-- MENU LATERAL -->
+
+<div id="menu-lateral">
+
+    <button onclick="abrirMenu()">X</button>
+
+        <div class="categoria">
+          
+            <a href="#inicio"><h3>Inicio</h3></a>
+        </div> 
+    
+        <div class="categoria">
+          <h3>Promociones</h3>
+          <a href="#combos">Combos</a>
+          <a href="#combos">Camisetas</a>
+          <a href="#combos">Relojes</a>
+        </div>
+        
+        <div class="categoria">
+          <h3>Camisetas</h3>
+
+          <a href="#boss">Boss</a>
+          <a href="#clemont">Clemont</a>
+          <a href="#nike">Nike</a>
+          <a href="#jordan">Jordan</a>
+        
+        </div>
+
+    <div class="categoria">
+        <h3>Relojes</h3>
+
+        <a href=#richardmille>Richard Mille</a>
+        <a href="#rolex">Rolex</a>
+        <a href="#invicta">Invicta</a>
+        <a href="#patekphilippe">patek philippe</a>
+    </div>
+
+    <div class="categoria">
+        <h3>Perfumes</h3>
+
+        <a href="#amaderadas">Amaderadas</a>
+        <a href="#dulces">Dulces</a>
+        <a href="#citricas">Cítricas</a>
+    </div>
+
+
+</div>
+    <!-- BANNER -->
+    <section class="carrusel-banner">
+
+          <div class="slide activo">
+      
+              <img src="img/banners/banner-zona-style.png">
+      
+          </div>
+      
+          <div class="slide">
+      
+              <img src="img/banners/banner-boss.jpg">
+      
+              <div class="contenido-banner">
+      
+                  <h2>Nueva colección Boss</h2>
+      
+                  <a href="#boss" class="btn-banner">
+                      Ver Boss
+                  </a>
+      
+              </div>
+      
+          </div>
+      
+          <div class="slide">
+      
+              <img src="img/banners/banner-jordan-2.png">
+      
+              <div class="contenido-banner">
+      
+                  <h2>Camisetas Jordan</h2>
+      
+                  <a href="#jordan" class="btn-banner">
+                      Ver Jordan
+                  </a>
+      
+              </div>
+      
+          </div>
+      
+          <div class="slide">
+      
+              <img src="img/banners/banner-richardmille.png">
+      
+              <div class="contenido-banner">
+      
+                  <h2>Richard Mille</h2>
+      
+                  <a href="#richardmille" class="btn-banner">
+                      Ver relojes
+                  </a>
+      
+              </div>
+      
+          </div>
+      
+          <div class="slide">
+      
+              <img src="img/banners/banner-rolex.jpg">
+      
+              <div class="contenido-banner">
+      
+                  <h2>Rolex Premium</h2>
+      
+                  <a href="#rolex" class="btn-banner">
+                      Ver Rolex
+                  </a>
+      
+              </div>
+      
+          </div>
+          <button class="nav-banner prev">❮</button>
+          <button class="nav-banner next">❯</button>
+
+          <div class="indicadores"></div>
+    </section>
+<div class="carrusel-promos">
+
+    <div class="promo activa">
+        🔥 20% DE DESCUENTO EN BOSS
+    </div>
+
+    <div class="promo">
+        ⌚ RELOJES DESDE $79.900
+    </div>
+
+    <div class="promo">
+        🚚 ENVÍOS A TODO COLOMBIA
+    </div>
+
+    <div class="promo">
+        💳 PAGA CONTRA ENTREGA
+    </div>
+
+</div>
+
+    <!-- PROMOCIONES -->
+    <!-- COMBOS -->
+    <section id="combos">
+        <h2>COMBOS</h2>
+        <div class="productos">
+            <div class="producto">
+                <img src="img/combos/combo-clemont-negro.jpeg" alt="">
+
+                <h3>COMBO CLEMONT</h3>
+
+                <p>$150,000</p>
+
+                <button onclick='abrirProducto({
+
+                    nombre:"Combo clemont",
+                    precio:150000,
+                    imagenes:[
+                        "img/combos/combo-clemont-negro.jpeg",
+                        "img/combos/combo-clemont-blanco.jpeg",
+                    ],
+
+                    opcion1Nombre:"Fragancia",
+                    opcion1:[
+                        "Toy Boy",
+                        "Invictus",
+                        "One Million"
+                    ],
+
+                    opcion2Nombre:"Color",
+                    opcion2:[
+                        "negro",
+                        "blanco"
+                    ]
+                    
+
+                    
+                    
+                })'>Agragar al carrito</button>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- CAMISETAS -->
+    <!-- BOSS -->
+    <section id="boss">
+
+        <h2>BOSS</h2>
+        
+
+        <div class="productos">
+
+            
+            <div class="producto">
+
+                <img src="img/camisetas 1.1 280gr tela tipo jean/camiseta boss tipo jean general.jpeg" alt="">
+                <h3>Camiseta Boss Tela Jean </h3>
+                <p>$89.900</p>
+
+                <button onclick='abrirProducto({
+
+                    nombre:"Camiseta Boss Tela Jean",
+
+                    precio:89900,
+
+                    imagenes:[
+                        "img/camisetas 1.1 280gr tela tipo jean/camiseta boss tipo jean gris claro.jpeg",
+                        "img/camisetas 1.1 280gr tela tipo jean/camiseta boss tipo jean gris oscuro.jpeg",
+                        "img/camisetas 1.1 280gr tela tipo jean/camiseta boss tipo jean blanca.jpeg"
+                    ],
+
+                    tallas:["M","L","XL","2XL"],
+
+                    colores:[
+                        "Gris Claro",
+                        "Gris Oscuro",
+                        "Blanco"
+                    ],
+                    
+                    coloresHex:[
+                    
+
+                        COLORES.grisClaro,
+                        COLORES.grisOscuro,
+                        COLORES.blanco
+              
+                    ]
+
+                })'>
+                    Ver producto
+                </button>
+            </div>
+        </div>
+    
+    </section>
+
+
+
+
+    <!-- RELOJES -->
+    <!-- RICHARD MILLE -->
+    <section id="richardmille">
+
+        <h2>RICHARD MILLE</h2>
+
+        <div class="productos">
+
+            <div class="producto">
+
+                <img src="img//relojes/richard mille.jpeg" alt="">
+                <h3>Richard Mille</h3>
+                <p>$79.900</p>
+
+                <button onclick="agregarCarrito(
+                    'Richard Mille',
+                    79900,
+                    'img/relojes/richard mille.jpeg'
+                    )">
+                    Agregar al carrito
+                </button>
+
+            </div>
+        </div>    
+    </section>
+  
+    <!-- PERFUMES -->    
+    <!-- AMADERADOS -->    
+    <section id="amaderadas">
+
+        <h2>AMADERADAS</h2>
+
+        <div class="productos">
+
+            <div class="producto">
+
+                <img src="img/perfumes/100-ml.jpeg" alt="">
+                <h3>Amaderadas</h3>
+                <p>$30,000</p>
+
+                <button onclick='abrirProducto({
+
+                        nombre:"Amaderada",
+                    
+                        precio:30000,
+                    
+                        imagenes:[
+                            "img/perfumes/100-ml.jpeg",
+                            "img/perfumes/50-ml.jpeg",
+                            "img/perfumes/30-ml.jpeg"
+                        ],
+                    
+                        opcion1Nombre:"Fragancia",
+                    
+                        opcion1:[
+                            "9PM",
+                            
+                            "Valentino Born Roma",
+                            "Bad boy"
+                            
+                        ],
+                    
+                        opcion2Nombre:"Mililitros",
+                    
+                        opcion2:[
+                            "30ml",
+                            "50ml",
+                            "100ml"
+                        ],
+
+                        precios:[
+                            25000,
+                            38000,
+                            50000
+                        ]
+                    
+                    })'>
+                    Agregar al carrito
+                </button>
+
+            </div>
+        </div>
+    </section>
+    <!-- DULCES -->    
+    <section id="dulces">
+
+        <h2>DULCES</h2>
+
+        <div class="productos">
+
+            <div class="producto">
+
+                <img src="img/perfumes/100-ml.jpeg" alt="">
+                <h3>Dulces</h3>
+                <p>$30,000</p>
+
+                <button onclick='abrirProducto({
+
+                        nombre:"Dulces",
+                    
+                        precio:30000,
+                    
+                        imagenes:[
+                            "img/perfumes/100-ml.jpeg",
+                            "img/perfumes/50-ml.jpeg",
+                            "img/perfumes/30-ml.jpeg"
+                        ],
+                    
+                        opcion1Nombre:"Fragancia",
+                    
+                        opcion1:[
+                            "Lataffa Amathyst",
+                            "Arabians Tonka",
+                            "Orientica Amber Rouge",
+                            "Lataffa Honor & Glory",
+                            "Eros",
+                            "Asad Negra",
+                            "Khamrah",
+                            "Sublime",
+                            "Mandarin Sky",
+                            "Le Male"
+                            
+                        ],
+                    
+                        opcion2Nombre:"Mililitros",
+                    
+                        opcion2:[
+                            "30ml",
+                            "50ml",
+                            "100ml"
+                        ],
+
+                        precios:[
+                            25000,
+                            38000,
+                            50000
+                        ]
+                    
+                    })'>
+                    Agregar al carrito
+                </button>
+
+            </div>
+        </div>
+    </section>        
+    <!-- CITRICAS -->    
+    <section id="citricas">
+
+        <h2>CITRICAS</h2>
+
+        <div class="productos">
+
+            <div class="producto">
+
+                <img src="img/perfumes/100-ml.jpeg" alt="">
+                <h3>Citricas</h3>
+                <p>$30,000</p>
+
+                <button onclick='abrirProducto({
+
+                        nombre:"Citricas",
+                    
+                        precio:30000,
+                    
+                        imagenes:[
+                            "img/perfumes/100-ml.jpeg",
+                            "img/perfumes/50-ml.jpeg",
+                            "img/perfumes/30-ml.jpeg"
+                        ],
+                    
+                        opcion1Nombre:"Fragancia",
+                    
+                        opcion1:[
+                            "Issey Miyake",
+                            "CR7",
+                            "Silver Creed",
+                            "212 VIP",
+                            "Club de Nuit",
+                            "Sauvage",
+                            "Acqua Di Gio",
+                            "Lacoste red",
+                            "Le Beu"
+                            
+                        ],
+                    
+                        opcion2Nombre:"Mililitros",
+                    
+                        opcion2:[
+                            "30ml",
+                            "50ml",
+                            "100ml"
+                        ],
+
+                        precios:[
+                            25000,
+                            38000,
+                            50000
+                        ]
+                    
+                    })'>
+                    Agregar al carrito
+                </button>
+
+            </div>
+        </div>
+    </section>    
+
+    
+    <div id="modalProducto" class="modal">
+
+        <div class="modal-contenido">
+
+            <span class="cerrar-modal"
+                onclick="cerrarModal()">
+                ×
+            </span>
+
+            <div class="producto-modal">
+
+                <div>
+
+                    <img id="imgPrincipal"
+                        class="imagen-principal">
+
+                    <div id="galeria"
+                        class="galeria">
+                    </div>
+
+                </div>
+
+                <div class="info-producto">
+
+                    <h2 id="nombreModal"></h2>
+
+                    <div id="precioModal"
+                        class="precio-modal">
+                    </div>
+
+                    <p class="descripcion">
+                        Producto premium de alta calidad.
+                    </p>
+
+                    <div id="tituloOpcion1" class="subtitulo">
+                        Tallas
+                    </div>
+                    
+                    <div id="contenedorTallas" class="tallas"></div>
+                    
+                    <div id="tituloOpcion2" class="subtitulo">
+                        Colores
+                    </div>
+                    
+                    <div id="contenedorColores" class="colores"></div>
+                                       
+
+                    <button class="btn-modal"
+                            onclick="agregarDesdeModal()">
+                        Agregar al carrito
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <a href="https://api.whatsapp.com/send?phone=573134905998"
+        class="whatsapp-float"
+        target="_blank">
+
+        <img src="img/whatsapp.png" alt="WhatsApp">
+
+    </a>
+
+       <a href="https://www.instagram.com/zona_stylee_/"
+           
+        class="instagram-float"
+        target="_blank" >
+
+        <img src="img/instagram.png" alt="Instagram">
+
+    </a>
+
+
+    <script src="colores.js"></script>
+    <script src="js/script.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</body>
+
+</html>
