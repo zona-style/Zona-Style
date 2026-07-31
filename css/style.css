@@ -79,6 +79,9 @@ header{
 
     overflow-y:auto;
 
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+
     z-index:9999;
 
     padding:25px;
@@ -337,7 +340,7 @@ section{
 }
 
 .carrito-icono{
-    cursosr:pointer;
+    cursor:pointer;
     font-size:24px;
     display:flex;
     align-items:center;
@@ -458,10 +461,12 @@ section{
 }
 
 .color{
-    width:35px;
-    height:35px;
-
+    width:40px;
+    height:40px;
     border-radius:50%;
+    border:2px solid #ccc;
+    cursor:pointer;
+    box-sizing:border-box;
 }
 
 .talla.seleccionada{

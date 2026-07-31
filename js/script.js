@@ -127,6 +127,8 @@ function abrirMenu(){
     .getElementById("menu-lateral")
     .classList.toggle("activo");
 
+    
+
     document.body.classList
 
 }

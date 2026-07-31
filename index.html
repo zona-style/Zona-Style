@@ -101,28 +101,30 @@
     
         <div class="categoria">
           <h3>Promociones</h3>
-          <a href="#combos">Combos</a>
-          <a href="#combos">Camisetas</a>
-          <a href="#combos">Relojes</a>
+          <!--<a href="#combos">Combos</a>-->
+          <a href="#promo-camisetas">Camisetas</a>
+          <!--<a href="#relojes">Relojes</a>-->
         </div>
         
         <div class="categoria">
           <h3>Camisetas</h3>
 
           <a href="#boss">Boss</a>
-          <a href="#clemont">Clemont</a>
+          <a href="#monastery">Monastery</a>
+          <a href="#lacoste">Lacoste</a>
+          <a href="#undergold">Undergold</a>
           <a href="#nike">Nike</a>
-          <a href="#jordan">Jordan</a>
+          
         
         </div>
 
     <div class="categoria">
         <h3>Relojes</h3>
 
-        <a href=#richardmille>Richard Mille</a>
+    <!--<a href=#richardmille>Richard Mille</a> -->
         <a href="#rolex">Rolex</a>
-        <a href="#invicta">Invicta</a>
-        <a href="#patekphilippe">patek philippe</a>
+    <!--<a href="#invicta">Invicta</a>
+        <a href="#patekphilippe">patek philippe</a> -->
     </div>
 
     <div class="categoria">
@@ -234,36 +236,39 @@
 
     <!-- PROMOCIONES -->
     <!-- COMBOS -->
-    <section id="combos">
-        <h2>COMBOS</h2>
+    <section id="promo-camisetas">
+        <h2>CAMISETAS</h2>
         <div class="productos">
             <div class="producto">
-                <img src="img/combos/combo-clemont-negro.jpeg" alt="">
+                <img src="img/camisetas/purple/purple-negra.jpeg" alt="">
 
-                <h3>COMBO CLEMONT</h3>
+                <h3>PURPLE</h3>
 
-                <p>$150,000</p>
+                <p>$74,900</p>
 
                 <button onclick='abrirProducto({
 
-                    nombre:"Combo clemont",
-                    precio:150000,
+                    nombre:"Camiseta purple",
+                    precio:74900,
                     imagenes:[
-                        "img/combos/combo-clemont-negro.jpeg",
-                        "img/combos/combo-clemont-blanco.jpeg",
+                        "img/camisetas/purple/purple-negra.jpeg",
+                        "img/camisetas/purple/purple-blanca.jpeg",
                     ],
 
-                    opcion1Nombre:"Fragancia",
-                    opcion1:[
-                        "Toy Boy",
-                        "Invictus",
-                        "One Million"
-                    ],
+                    tallas:["L"],
 
-                    opcion2Nombre:"Color",
-                    opcion2:[
-                        "negro",
-                        "blanco"
+                    colores:[
+                        "Negro",
+                        "Blanco",
+                        
+                    ],
+                    
+                    coloresHex:[
+                    
+
+                        COLORES.negro,
+                        COLORES.blanco
+              
                     ]
                     
 
@@ -272,6 +277,164 @@
                 })'>Agragar al carrito</button>
 
             </div>
+
+            
+
+            <div class="producto">
+                <img src="img/camisetas/blow-up/blow-up-negra.jpeg" alt="">
+
+                <h3>BLOW UP</h3>
+
+                <p>$74,900</p>
+
+                <button onclick='abrirProducto({
+
+                    nombre:"Camiseta blow up",
+                    precio:74900,
+                    imagenes:[
+                        "img/camisetas/blow-up/blow-up-negra.jpeg",
+                        
+                    ],
+
+                    tallas:["XL"],
+
+                    colores:[
+                        "Negro",
+                        
+                        
+                    ],
+                    
+                    coloresHex:[
+                    
+
+                        COLORES.negro,
+                        
+              
+                    ]
+                    
+
+                    
+                    
+                })'>Agragar al carrito</button>
+
+            </div>
+
+            <div class="producto">
+                <img src="img/camisetas/y-out/y-out-blanca.jpeg" alt="">
+
+                <h3>Y/OUT</h3>
+
+                <p>$74,900</p>
+
+                <button onclick='abrirProducto({
+
+                    nombre:"Camiseta y/out",
+                    precio:74900,
+                    imagenes:[
+                        "img/camisetas/y-out/y-out-blanca.jpeg",
+                        
+                    ],
+
+                    tallas:["L"],
+
+                    colores:[
+                        
+                        "Blanco",
+                        
+                    ],
+                    
+                    coloresHex:[
+                    
+
+                        
+                        COLORES.blanco
+              
+                    ]
+                    
+
+                    
+                    
+                })'>Agragar al carrito</button>
+
+            </div>
+            <div class="producto">
+                <img src="img/camisetas/clemont/clemont-negra.jpeg" alt="">
+
+                <h3>CLEMONT</h3>
+
+                <p>$74,900</p>
+
+                <button onclick='abrirProducto({
+
+                    nombre:"Camiseta clemont",
+                    precio:74900,
+                    imagenes:[
+                        "img/camisetas/clemont/clemont-negra.jpeg",
+                        
+                    ],
+
+                    tallas:["L"],
+
+                    colores:[
+                        
+                        "Negro",
+                        
+                    ],
+                    
+                    coloresHex:[
+                    
+
+                        
+                        COLORES.negro
+              
+                    ]
+                    
+
+                    
+                    
+                })'>Agragar al carrito</button>
+
+            </div>
+
+        <div class="producto">
+                <img src="img/camisetas/clemont/clemont-blanca.jpeg" alt="">
+
+                <h3>CLEMONT</h3>
+
+                <p>$74,900</p>
+
+                <button onclick='abrirProducto({
+
+                    nombre:"Camiseta clemont",
+                    precio:74900,
+                    imagenes:[
+                        "img/camisetas/clemont/clemont-blanca.jpeg",
+                        
+                    ],
+
+                    tallas:["L"],
+
+                    colores:[
+                        
+                        "Blanco",
+                        
+                    ],
+                    
+                    coloresHex:[
+                    
+
+                        
+                        COLORES.blanco
+              
+                    ]
+                    
+
+                    
+                    
+                })'>Agragar al carrito</button>
+
+            </div>
+
 
         </div>
     </section>
@@ -287,35 +450,34 @@
             
             <div class="producto">
 
-                <img src="img/camisetas 1.1 280gr tela tipo jean/camiseta boss tipo jean general.jpeg" alt="">
-                <h3>Camiseta Boss Tela Jean </h3>
-                <p>$89.900</p>
+                <img src="img/camisetas/hugo-boss/boss-blanca.jpeg" alt="">
+                <h3>BOSS BLANCA</h3>
+                <p>$79.900</p>
 
                 <button onclick='abrirProducto({
 
-                    nombre:"Camiseta Boss Tela Jean",
+                    nombre:"Camiseta Boss blanca",
 
-                    precio:89900,
+                    precio:79900,
 
                     imagenes:[
-                        "img/camisetas 1.1 280gr tela tipo jean/camiseta boss tipo jean gris claro.jpeg",
-                        "img/camisetas 1.1 280gr tela tipo jean/camiseta boss tipo jean gris oscuro.jpeg",
-                        "img/camisetas 1.1 280gr tela tipo jean/camiseta boss tipo jean blanca.jpeg"
+                        
+                        "img/camisetas/hugo-boss/boss-blanca.jpeg"
                     ],
 
-                    tallas:["M","L","XL","2XL"],
+                    tallas:["L"],
 
                     colores:[
-                        "Gris Claro",
-                        "Gris Oscuro",
+                        
+                        
                         "Blanco"
                     ],
                     
                     coloresHex:[
                     
 
-                        COLORES.grisClaro,
-                        COLORES.grisOscuro,
+                        
+                        
                         COLORES.blanco
               
                     ]
@@ -324,31 +486,315 @@
                     Ver producto
                 </button>
             </div>
+
+            <div class="producto">
+                <img src="img/camisetas/hugo-boss/hugo-firma-verde.jpeg" alt="">
+
+                <h3>HUGO BOSS FIRMA</h3>
+
+                <p>$79,900</p>
+
+                <button onclick='abrirProducto({
+
+                    nombre:"Camiseta hugo boss",
+                    precio:79900,
+                    imagenes:[
+                        "img/camisetas/hugo-boss/hugo-firma-verde.jpeg",
+                        
+                    ],
+
+                    tallas:["M"],
+
+                    colores:[
+                        "Verde",
+                        
+                        
+                    ],
+                    
+                    coloresHex:[
+                    
+
+                        COLORES.verde,
+                        
+              
+                    ]
+                    
+
+                    
+                    
+                })'>Agragar al carrito</button>
+
+            </div>
+
         </div>
     
     </section>
 
+    <!-- NIKE -->
+    <section id="nike">
+
+        <h2>NIKE</h2>
+        
+
+        <div class="productos">
+            <div class="producto">
+                <img src="img/camisetas/nike/nike-blanca.jpeg" alt="">
+
+                <h3>NIKE</h3>
+
+                <p>$79,900</p>
+
+                <button onclick='abrirProducto({
+
+                    nombre:"Camiseta nike",
+                    precio:79900,
+                    imagenes:[
+                        "img/camisetas/nike/nike-blanca.jpeg",
+                        "img/camisetas/nike/nike-blanca-espalda.jpeg"
+                        
+                    ],
+
+                    tallas:["L"],
+
+                    colores:[
+                        "Blanca",
+                        
+                        
+                    ],
+                    
+                    coloresHex:[
+                    
+
+                        COLORES.blanco,
+                        
+              
+                    ]
+                    
+
+                    
+                    
+                })'>Agragar al carrito</button>
+
+            </div>
+
+
+        
+        
+        </div>
+    </section>
+    <!--UNDERGOLD-->
+    <section id="undergold">
+        <h2>UNDERGOLD</h2>
+        <div class="productos">
+            <div class="producto">
+                <img src="img/camisetas/undergold/undergold-gris.jpeg" alt="">
+
+                <h3>UNDERGOLD</h3>
+
+                <p>$79,900</p>
+
+                <button onclick='abrirProducto({
+
+                    nombre:"Camiseta undergold",
+                    precio:79900,
+                    imagenes:[
+                        "img/camisetas/undergold/undergold-gris.jpeg",
+                        
+                    ],
+
+                    tallas:["L"],
+
+                    colores:[
+                        "Gris",
+                        
+                        
+                    ],
+                    
+                    coloresHex:[
+                    
+
+                        COLORES.grisOscuro,
+                        
+              
+                    ]
+                    
+
+                    
+                    
+                })'>Agragar al carrito</button>
+
+            </div>
+            <div class="producto">
+                <img src="img/camisetas/undergold/undergold-beige.jpeg" alt="">
+
+                <h3>UNDERGOLD</h3>
+
+                <p>$79,900</p>
+
+                <button onclick='abrirProducto({
+
+                    nombre:"Camiseta undergold",
+                    precio:79900,
+                    imagenes:[
+                        "img/camisetas/undergold/undergold-beige.jpeg",
+                        
+                        
+                    ],
+
+                    tallas:["M"],
+
+                    colores:[
+                        "Beige",
+                        
+                        
+                    ],
+                    
+                    coloresHex:[
+                    
+
+                        COLORES.beige,
+                        
+              
+                    ]
+                    
+
+                    
+                    
+                })'>Agragar al carrito</button>
+
+            </div>
+
+        </div>
+    </section>
+    <!--LACOSTE-->
+    <section id="lacoste">
+        <h2>LACOSTE</h2>
+
+        <div class="productos">
+            <div class="producto">
+                <img src="img/camisetas/lacoste/lacoste-blanca.jpeg" alt="">
+
+                <h3>LACOSTE</h3>
+
+                <p>$79,900</p>
+
+                <button onclick='abrirProducto({
+
+                    nombre:"Camiseta lacoste",
+                    precio:79900,
+                    imagenes:[
+                        "img/camisetas/lacoste/lacoste-blanca.jpeg",
+                        
+                        
+                    ],
+
+                    tallas:["L"],
+
+                    colores:[
+                        "Blanca",
+                        
+                        
+                    ],
+                    
+                    coloresHex:[
+                    
+
+                        COLORES.blanco,
+                        
+              
+                    ]
+                    
+
+                    
+                    
+                })'>Agragar al carrito</button>
+
+            </div>
+        </div>
+    </section>
+    <!--MONASTERY-->
+    <section id="monastery">
+        <h2>MONASTERY</h2>
+
+        <div class="productos">
+            <div class="producto">
+                <img src="img/camisetas/monastery/monastery-negra.jpeg" alt="">
+
+                <h3>MONASTERY</h3>
+
+                <p>$79,900</p>
+
+                <button onclick='abrirProducto({
+
+                    nombre:"Camiseta monastery",
+                    precio:79900,
+                    imagenes:[
+                        "img/camisetas/monastery/monastery-negra.jpeg",
+                        
+                        
+                    ],
+
+                    tallas:["L"],
+
+                    colores:[
+                        "Negro",
+                        
+                        
+                    ],
+                    
+                    coloresHex:[
+                    
+
+                        COLORES.negro,
+                        
+              
+                    ]
+                    
+
+                    
+                    
+                })'>Agragar al carrito</button>
+
+            </div>
+
+        </div>
+    </section>
 
 
 
     <!-- RELOJES -->
-    <!-- RICHARD MILLE -->
-    <section id="richardmille">
+    <!-- ROLEX -->
+    <section id="rolex">
 
-        <h2>RICHARD MILLE</h2>
+        <h2>ROLEX</h2>
 
         <div class="productos">
 
             <div class="producto">
 
-                <img src="img//relojes/richard mille.jpeg" alt="">
-                <h3>Richard Mille</h3>
+                <img src="img//relojes/rolex/rolex-dejuv-blanco.jpeg" alt="">
+                <h3>Rolex</h3>
                 <p>$79.900</p>
 
                 <button onclick="agregarCarrito(
-                    'Richard Mille',
+                    'Rolex',
                     79900,
-                    'img/relojes/richard mille.jpeg'
+                    'img/relojes/rolex/rolex-dejuv-blanco.jpeg'
+                    )">
+                    Agregar al carrito
+                </button>
+
+            </div>
+            <div class="producto">
+
+                <img src="img//relojes/rolex/rolex-dejuv-negro.jpeg" alt="">
+                <h3>Rolex</h3>
+                <p>$79.900</p>
+
+                <button onclick="agregarCarrito(
+                    'Rolex',
+                    79900,
+                    'img/relojes/rolex/rolex-dejuv-negro.jpeg'
                     )">
                     Agregar al carrito
                 </button>
@@ -367,27 +813,27 @@
 
             <div class="producto">
 
-                <img src="img/perfumes/100-ml.jpeg" alt="">
+                <img src="img/perfumes/frasco-100ml.jpeg" alt="">
                 <h3>Amaderadas</h3>
                 <p>$30,000</p>
 
                 <button onclick='abrirProducto({
 
-                        nombre:"Amaderada",
+                        nombre:"Perfume",
                     
                         precio:30000,
                     
                         imagenes:[
-                            "img/perfumes/100-ml.jpeg",
-                            "img/perfumes/50-ml.jpeg",
-                            "img/perfumes/30-ml.jpeg"
+                            "img/perfumes/frasco-30ml.jpeg",
+                            "img/perfumes/frasco-50ml.jpeg",
+                            "img/perfumes/frasco-100ml.jpeg"
                         ],
                     
                         opcion1Nombre:"Fragancia",
                     
                         opcion1:[
                             "9PM",
-                            
+                            "Santal 33",
                             "Valentino Born Roma",
                             "Bad boy"
                             
@@ -423,20 +869,20 @@
 
             <div class="producto">
 
-                <img src="img/perfumes/100-ml.jpeg" alt="">
+                <img src="img/perfumes/frasco-100ml.jpeg" alt="">
                 <h3>Dulces</h3>
                 <p>$30,000</p>
 
                 <button onclick='abrirProducto({
 
-                        nombre:"Dulces",
+                        nombre:"Perfumes",
                     
                         precio:30000,
                     
                         imagenes:[
-                            "img/perfumes/100-ml.jpeg",
-                            "img/perfumes/50-ml.jpeg",
-                            "img/perfumes/30-ml.jpeg"
+                            "img/perfumes/frasco-30ml.jpeg",
+                            "img/perfumes/frasco-50ml.jpeg",
+                            "img/perfumes/frasco-100ml.jpeg"
                         ],
                     
                         opcion1Nombre:"Fragancia",
@@ -485,20 +931,20 @@
 
             <div class="producto">
 
-                <img src="img/perfumes/100-ml.jpeg" alt="">
+                <img src="img/perfumes/frasco-100ml.jpeg" alt="">
                 <h3>Citricas</h3>
                 <p>$30,000</p>
 
                 <button onclick='abrirProducto({
 
-                        nombre:"Citricas",
+                        nombre:"Perfumes",
                     
                         precio:30000,
                     
                         imagenes:[
-                            "img/perfumes/100-ml.jpeg",
-                            "img/perfumes/50-ml.jpeg",
-                            "img/perfumes/30-ml.jpeg"
+                            "img/perfumes/frasco-30ml.jpeg",
+                            "img/perfumes/frasco-50ml.jpeg",
+                            "img/perfumes/frasco-100ml.jpeg"
                         ],
                     
                         opcion1Nombre:"Fragancia",
