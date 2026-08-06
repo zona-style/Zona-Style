@@ -798,10 +798,21 @@ function generarFactura(){
                             imgWidth,
                             imgHeight
                         );
-                        
+
                         pdf.save("Factura-Zona-Style.pdf");
+
+                        if (window.opener) {
+                            window.opener.vaciarCarrito();
+
+                            
+                            
+                        }
+
+                       
                         
                         document.getElementById("btnWhatsApp").style.display = "block";
+
+                       
                 }
         </script>    
     </body>
@@ -825,6 +836,10 @@ function generarFactura(){
         ventana.document.write(factura);
         
         ventana.document.close();
+}
+function vaciarCarrito() {
+    carrito = [];
+    actualizarCarrito();
 }
 
 function enviarPedidoWhatsapp(){
@@ -907,7 +922,7 @@ setInterval(() => {
 
     promos[promoActual].classList.add("activa");
 
-}, 2000);
+}, 3500);
 
 
 
@@ -1011,7 +1026,7 @@ function reiniciar(){
 
         mostrarSlide(slideActual + 1);
 
-    },2000);
+    },3500);
 
 }
 
