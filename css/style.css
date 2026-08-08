@@ -110,114 +110,176 @@ header{
 
 /* ================= BANNER ================= */
 
-.carrusel-banner{
-    position:relative;
-    width:100%;
-    height:90vh;
-    overflow:hidden;
+.carrusel-banner {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 7;
+    overflow: hidden;
+    background: #000;
 }
 
-.slide{
-    position:absolute;
-    inset:0;
+.slide {
+    position: absolute;
+    inset: 0;
 
-    opacity:0;
-    transition:.8s;
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 0.8s ease;
 }
 
-.slide.activo{
-    opacity:1;
-    z-index:1;
+.slide.activo {
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
 }
 
-.slide img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
+/* IMAGEN DEL BANNER */
+.slide img {
+    width: 100%;
+    height: 100%;
+
+    /* IMPORTANTE:
+       contain muestra TODA la imagen
+       y evita que se recorte */
+    object-fit: contain;
+
+    object-position: center;
+    display: block;
+
+    background: #000;
 }
 
-.contenido-banner{
-    position:absolute;
-    top:50%;
-    left:50%;
 
-    transform:translate(-50%,-50%);
+/* ================= TEXTO ================= */
 
-    text-align:center;
-    color:white;
+.contenido-banner {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 90%;
+
+    text-align: center;
+    color: white;
+
+    z-index: 3;
 }
 
-.contenido-banner h2{
-    font-size:3rem;
-    margin-bottom:20px;
-    color:white;
-    text-shadow: 0 2px 5px rgba(0,0,0,0.9);
+.contenido-banner h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+
+    color: white;
+
+    text-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.9),
+        0 0 10px rgba(0, 0, 0, 0.7);
 }
 
-.btn-banner{
-    display:inline-block;
-    padding:15px 30px;
-    background:black;
-    color:white;
-    text-decoration:none;
-    border-radius:8px;
+
+/* ================= BOTÓN ================= */
+
+.btn-banner {
+    display: inline-block;
+
+    padding: 15px 30px;
+
+    background: black;
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    transition: 0.3s;
 }
 
-.nav-banner{
-    position:absolute;
-    top:50%;
-
-    transform:translateY(-50%);
-
-    z-index:2;
-
-    border:none;
-    background:rgba(0,0,0,.5);
-
-    color:white;
-
-    font-size:30px;
-
-    width:50px;
-    height:50px;
-
-    border-radius:50%;
+.btn-banner:hover {
+    background: white;
+    color: black;
 }
 
-.prev{
-    left:20px;
+
+/* ================= FLECHAS ================= */
+
+.nav-banner {
+    position: absolute;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    z-index: 4;
+
+    border: none;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    color: white;
+
+    font-size: 30px;
+
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.3s;
 }
 
-.next{
-    right:20px;
+.nav-banner:hover {
+    background: rgba(0, 0, 0, 0.8);
 }
 
-.indicadores{
-    position:absolute;
-
-    bottom:20px;
-    left:50%;
-
-    transform:translateX(-50%);
-
-    display:flex;
-    gap:10px;
-
-    z-index:2;
+.prev {
+    left: 20px;
 }
 
-.indicador{
-    width:12px;
-    height:12px;
-
-    border-radius:50%;
-    background:white;
-
-    opacity:.5;
+.next {
+    right: 20px;
 }
 
-.indicador.activo{
-    opacity:1;
+
+/* ================= INDICADORES ================= */
+
+.indicadores {
+    position: absolute;
+
+    bottom: 20px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    gap: 10px;
+
+    z-index: 4;
+}
+
+.indicador {
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    opacity: 0.5;
+
+    cursor: pointer;
+}
+
+.indicador.activo {
+    opacity: 1;
 }
 
 /* ================= PROMOS ================= */
