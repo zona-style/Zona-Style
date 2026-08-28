@@ -101,7 +101,7 @@
     
         <div class="categoria">
           <h3>Promociones</h3>
-          <!--<a href="#combos">Combos</a>-->
+          <a href="#combos">Combos</a>
           <a href="#promo-camisetas">Camisetas</a>
           <!--<a href="#relojes">Relojes</a>-->
         </div>
@@ -110,10 +110,11 @@
           <h3>Camisetas</h3>
 
           <a href="#boss">Boss</a>
+          <a href="#nike">Nike</a> 
           <a href="#undergold">Undergold</a>
-          <!--<a href="#lacoste">Lacoste</a>
-          <a href="#monastery">Monastery</a>-->
-         <!-- <a href="#nike">Nike</a> -->
+          <!--<a href="#lacoste">Lacoste</a>-->
+          <a href="#monastery">Monastery</a>
+          
           
         
         </div>
@@ -234,58 +235,164 @@
 
 </div>
 
-    <!-- PROMOCIONES -->
     <!-- COMBOS -->
-    <section id="promo-camisetas">
-        <h2>CAMISETAS</h2>
+    <section id="combos">
+        <h2>COMBOS</h2>
         <div class="productos">
             <div class="producto">
-                
-            
+                <img src="img/combos/combo-clemont.jpg" alt="">
 
-            
+                <h3>CLEMONT</h3>
 
-            <div class="producto">
-                <img src="img/camisetas/y-out/y-out-blanca.jpeg" alt="">
-
-                <h3>Y/OUT</h3>
-
-                <p>$74,900</p>
+                <p>$149,900</p>
 
                 <button onclick='abrirProducto({
 
-                    nombre:"Camiseta y/out",
-                    precio:74900,
-                    imagenes:[
-                        "img/camisetas/y-out/y-out-blanca.jpeg",
-                        
-                    ],
-
-                    tallas:["L"],
-
-                    colores:[
-                        
-                        "Blanco",
-                        
-                    ],
+                        nombre:"Combo Clemont",
                     
-                    coloresHex:[
+                        precio:149900,
                     
+                        imagenes:[
+                            "img/combos/combo-clemont.jpg",
+                            "img/camisetas/clemont/clemont-blanca.jpeg",
+                            "img/relojes/rolex/rolex-submarine.jpeg",
+                            "img/perfumes/frasco-30ml.jpeg",
+                            
+                            
+                        ],
+                    
+                        opcion1Nombre:"Fragancia",
+                    
+                        opcion1:[
+                            "9PM",
+                            "Santal 33",
+                            "Valentino Born Roma",
+                            "Bad boy",
+                            "Lataffa Amathyst",
+                            "Arabians Tonka",
+                            "Orientica Amber Rouge",
+                            "Lataffa Honor & Glory",
+                            "Eros",
+                            "Asad Negra",
+                            "Khamrah",
+                            "Sublime",
+                            "Mandarin Sky",
+                            "Le Male",
+                            "Issey Miyake",
+                            "CR7",
+                            "Silver Creed",
+                            "212 VIP",
+                            "Club de Nuit",
+                            "Sauvage",
+                            "Acqua Di Gio",
+                            "Lacoste red",
+                            "Le Beu"
+                            
+                        ],
+                    
+                        opcion2Nombre:"Talla",
+                    
+                        opcion2:[
+                            "L",
+                            
+                        ],
 
-                        
-                        COLORES.blanco
-              
-                    ]
+                       
                     
-
-                    
-                    
-                })'>Agragar al carrito</button>
-
+                    })'>
+                    Agregar al carrito
+                </button>
             </div>
-            
+            <div class="producto">
+                <img src="img/combos/combo-undergold.jpg" alt="">
 
-        <div class="producto">
+                <h3>COMBO UNDERGOLD</h3>
+
+                <p>$149,900</p>
+
+                <button onclick='abrirProducto({
+
+                        nombre:"Combo Undergold",
+                    
+                        precio:149900,
+                    
+                        imagenes:[
+                            "img/combos/combo-undergold.jpg",
+                            "img/camisetas/undergold/undergold-angel-delante.jpg",
+                            "img/camisetas/undergold/undergold-angel-detras.jpg",
+                            "img/relojes/invicta/invicta-plateado.jpeg",
+                            
+                            
+                            
+                        ],
+                    
+                        
+                    
+                        
+                        opcion2Nombre:"Talla",
+                    
+                        opcion2:[
+                            "L",
+                            
+                        ],
+
+
+                       
+                    
+                    })'>
+                    Agregar al carrito
+                </button>
+            </div>
+            <div class="producto">
+                <img src="img/combos/combo-polo-undergold.jpg" alt="">
+
+                <h3>COMBO UNDERGOLD</h3>
+
+                <p>$159,900</p>
+
+                <button onclick='abrirProducto({
+
+                        nombre:"Combo Undergold",
+                    
+                        precio:159900,
+                    
+                        imagenes:[
+                            "img/combos/combo-polo-undergold.jpg",
+                            "img/camisetas/undergold/polo-undergold.jpg",
+                            
+                            "img/relojes/rolex/rolex-dejuv-negro.jpeg",
+                            
+                            
+                            
+                        ],
+                    
+                        
+                    
+                        
+                        opcion2Nombre:"Talla",
+                    
+                        opcion2:[
+                            "L",
+                            
+                        ],
+
+
+                       
+                    
+                    })'>
+                    Agregar al carrito
+                </button>
+            </div>
+        </div>
+    </section>
+     
+    <!-- PROMOCIONES -->
+    
+    <section id="promo-camisetas">
+        <h2>CAMISETAS</h2>
+        <div class="productos">
+
+            <div class="producto">
                 <img src="img/camisetas/clemont/clemont-blanca.jpeg" alt="">
 
                 <h3>CLEMONT</h3>
@@ -323,6 +430,83 @@
                 })'>Agragar al carrito</button>
 
             </div>
+            <div class="producto">
+                <img src="img/camisetas/amiri/amiri.jpg" alt="">
+
+                <h3>AMIRI</h3>
+
+                <p>$79,900</p>
+
+                <button onclick='abrirProducto({
+
+                    nombre:"Camiseta Amiri",
+                    precio:79900,
+                    imagenes:[
+                        "img/camisetas/amiri/amiri.jpg",
+                        
+                    ],
+
+                    tallas:["L"],
+
+                    colores:[
+                        
+                        "Negro",
+                        
+                    ],
+                    
+                    coloresHex:[
+                    
+
+                        
+                        COLORES.negro
+              
+                    ]
+                    
+
+                    
+                    
+                })'>Agragar al carrito</button>
+
+            </div>
+            <div class="producto">
+                <img src="img/camisetas/puma/puma.jpg" alt="">
+
+                <h3>PUMA</h3>
+
+                <p>$74,900</p>
+
+                <button onclick='abrirProducto({
+
+                    nombre:"Camiseta Puma",
+                    precio:74900,
+                    imagenes:[
+                        "img/camisetas/puma/puma.jpg",
+                        
+                    ],
+
+                    tallas:["L"],
+
+                    colores:[
+                        
+                        "Blanco",
+                        
+                    ],
+                    
+                    coloresHex:[
+                    
+
+                        
+                        COLORES.blanco
+              
+                    ]
+                    
+
+                    
+                    
+                })'>Agragar al carrito</button>
+
+            </div>
+            
 
 
         </div>
@@ -341,13 +525,13 @@
 
                 <img src="img/camisetas/hugo-boss/boss-blanca.jpeg" alt="">
                 <h3>BOSS BLANCA</h3>
-                <p>$79.900</p>
+                <p>$74.900</p>
 
                 <button onclick='abrirProducto({
 
                     nombre:"Camiseta Boss blanca",
 
-                    precio:79900,
+                    precio:74900,
 
                     imagenes:[
                         
@@ -382,7 +566,7 @@
     
     </section>
 
-    <!-- NIKE 
+    <!-- NIKE -->
     <section id="nike">
 
         <h2>NIKE</h2>
@@ -390,7 +574,7 @@
 
         <div class="productos">
             <div class="producto">
-                <img src="img/camisetas/nike/nike-blanca.jpeg" alt="">
+                <img src="img/camisetas/nike/nike-algodon-cafe.jpg" alt="">
 
                 <h3>NIKE</h3>
 
@@ -401,8 +585,315 @@
                     nombre:"Camiseta nike",
                     precio:79900,
                     imagenes:[
-                        "img/camisetas/nike/nike-blanca.jpeg",
-                        "img/camisetas/nike/nike-blanca-espalda.jpeg"
+                        "img/camisetas/nike/nike-algodon-cafe.jpg",
+                        
+                        
+                    ],
+
+                    tallas:["L"],
+
+                    colores:[
+                        "Cafe",
+                        
+                        
+                    ],
+                    
+                    coloresHex:[
+                    
+
+                        COLORES.cafe,
+                        
+              
+                    ]
+                    
+
+                    
+                    
+                })'>Agragar al carrito</button>
+
+            </div>
+            <div class="producto">
+                <img src="img/camisetas/nike/nike-blanca.jpg" alt="">
+
+                <h3>NIKE</h3>
+
+                <p>$79,900</p>
+
+                <button onclick='abrirProducto({
+
+                    nombre:"Camiseta nike",
+                    precio:79900,
+                    imagenes:[
+                        "img/camisetas/nike/nike-blanca.jpg",
+                        
+                        
+                    ],
+
+                    tallas:["XL"],
+
+                    colores:[
+                        "Blanca",
+                        
+                        
+                    ],
+                    
+                    coloresHex:[
+                    
+
+                        COLORES.blanco,
+                        
+              
+                    ]
+                    
+
+                    
+                    
+                })'>Agragar al carrito</button>
+
+            </div>
+            <div class="producto">
+                <img src="img/camisetas/nike/nike-coffe.jpg" alt="">
+
+                <h3>NIKE</h3>
+
+                <p>$79,900</p>
+
+                <button onclick='abrirProducto({
+
+                    nombre:"Camiseta nike",
+                    precio:79900,
+                    imagenes:[
+                        "img/camisetas/nike/nike-coffe.jpg",
+                        
+                        
+                    ],
+
+                    tallas:["XL"],
+
+                    colores:[
+                        "Blanco",
+                        
+                        
+                    ],
+                    
+                    coloresHex:[
+                    
+
+                        COLORES.blanco,
+                        
+              
+                    ]
+                    
+
+                    
+                    
+                })'>Agragar al carrito</button>
+
+            </div>
+            <div class="producto">
+                <img src="img/camisetas/nike/nike-newyork.jpg" alt="">
+
+                <h3>NIKE</h3>
+
+                <p>$74,900</p>
+
+                <button onclick='abrirProducto({
+
+                    nombre:"Camiseta nike",
+                    precio:74900,
+                    imagenes:[
+                        "img/camisetas/nike/nike-newyork.jpg",
+                        
+                        
+                    ],
+
+                    tallas:["L"],
+
+                    colores:[
+                        "Azul",
+                        
+                        
+                    ],
+                    
+                    coloresHex:[
+                    
+
+                        COLORES.azulOscuro,
+                        
+              
+                    ]
+                    
+
+                    
+                    
+                })'>Agragar al carrito</button>
+
+            </div>
+
+
+
+
+
+        
+        
+        </div>
+    </section> 
+    <!--UNDERGOLD-->
+    <section id="undergold">
+        <h2>UNDERGOLD</h2>
+        <div class="productos">
+            
+            <div class="producto">
+                <img src="img/camisetas/undergold/polo-undergold.jpg" alt="">
+
+                <h3>UNDERGOLD</h3>
+
+                <p>$89,900</p>
+
+                <button onclick='abrirProducto({
+
+                    nombre:"Camiseta undergold",
+                    precio:89900,
+                    imagenes:[
+                        "img/camisetas/undergold/polo-undergold.jpg",
+                        
+                        
+                    ],
+
+                    tallas:["L"],
+
+                    colores:[
+                        "Blanco",
+                        
+                        
+                    ],
+                    
+                    coloresHex:[
+                    
+
+                        COLORES.blanco,
+                        
+              
+                    ]
+                    
+
+                    
+                    
+                })'>Agragar al carrito</button>
+
+            </div>
+            <div class="producto">
+                <img src="img/camisetas/undergold/undergold-angel-detras.jpg" alt="">
+
+                <h3>UNDERGOLD</h3>
+
+                <p>$84,900</p>
+
+                <button onclick='abrirProducto({
+
+                    nombre:"Camiseta undergold",
+                    precio:84900,
+                    imagenes:[
+                        "img/camisetas/undergold/undergold-angel-delante.jpg",
+                        "img/camisetas/undergold/undergold-angel-detras.jpg"
+                        
+                        
+                    ],
+
+                    tallas:["L"],
+
+                    colores:[
+                        "Beige",
+                        
+                        
+                    ],
+                    
+                    coloresHex:[
+                    
+
+                        COLORES.beige,
+                        
+              
+                    ]
+                    
+
+                    
+                    
+                })'>Agragar al carrito</button>
+
+            </div>
+            <div class="producto">
+                <img src="img/camisetas/undergold/undergold-cuellov-delante.jpg" alt="">
+
+                <h3>UNDERGOLD</h3>
+
+                <p>$79,900</p>
+
+                <button onclick='abrirProducto({
+
+                    nombre:"Camiseta undergold",
+                    precio:79900,
+                    imagenes:[
+                        "img/camisetas/undergold/undergold-cuellov-delante.jpg",
+                        "img/camisetas/undergold/undergold-cuellov-detras.jpg"
+                        
+                        
+                    ],
+
+                    tallas:["L"],
+
+                    colores:[
+                        "Blanco",
+                        
+                        
+                    ],
+                    
+                    coloresHex:[
+                    
+
+                        COLORES.blanco,
+                        
+              
+                    ]
+                    
+
+                    
+                    
+                })'>Agragar al carrito</button>
+
+            </div>
+
+
+
+        </div>
+    </section>
+    <!--LACOSTE-->
+    <!--<section id="lacoste">
+        <h2>LACOSTE</h2>
+
+        <div class="productos">
+            
+        </div>
+    </section>-->
+    <!--MONASTERY -->
+    <section id="monastery">
+        <h2>MONASTERY</h2>
+
+        <div class="productos">
+            <div class="producto">
+                <img src="img/camisetas/monastery/monastery-delante.jpg" alt="">
+
+                <h3>MONASTERY</h3>
+
+                <p>$79,900</p>
+
+                <button onclick='abrirProducto({
+
+                    nombre:"Camiseta Monastery",
+                    precio:79900,
+                    imagenes:[
+                        "img/camisetas/monastery/monastery-delante.jpg",
+                        "img/camisetas/monastery/monastery-detras.jpg"
                         
                     ],
 
@@ -429,74 +920,9 @@
 
             </div>
 
-
-        
-        
-        </div>
-    </section> -->
-    <!--UNDERGOLD-->
-    <section id="undergold">
-        <h2>UNDERGOLD</h2>
-        <div class="productos">
-            
-            <div class="producto">
-                <img src="img/camisetas/undergold/undergold-beige.jpeg" alt="">
-
-                <h3>UNDERGOLD</h3>
-
-                <p>$79,900</p>
-
-                <button onclick='abrirProducto({
-
-                    nombre:"Camiseta undergold",
-                    precio:79900,
-                    imagenes:[
-                        "img/camisetas/undergold/undergold-beige.jpeg",
-                        
-                        
-                    ],
-
-                    tallas:["M"],
-
-                    colores:[
-                        "Beige",
-                        
-                        
-                    ],
-                    
-                    coloresHex:[
-                    
-
-                        COLORES.beige,
-                        
-              
-                    ]
-                    
-
-                    
-                    
-                })'>Agragar al carrito</button>
-
-            </div>
-
-        </div>
-    </section>
-    <!--LACOSTE-->
-    <!--<section id="lacoste">
-        <h2>LACOSTE</h2>
-
-        <div class="productos">
             
         </div>
     </section>
-    #MONASTERY
-    <section id="monastery">
-        <h2>MONASTERY</h2>
-
-        <div class="productos">
-            
-        </div>
-    </section>-->
 
 
 

@@ -173,28 +173,40 @@ function buscarProductos() {
 
 let productoActual = null;
 
+let tallaSeleccionada = "";
+let opcion1Seleccionada = "";
+let colorSeleccionado = "";
+let imagenSeleccionada = "";
+
 function abrirProducto(datos){
 
     productoActual = datos;
 
-    document.getElementById("tituloOpcion1")
-    .textContent =
-    datos.opcion1Nombre || "Tallas";
+    // =========================
+    // NOMBRE Y PRECIO
+    // =========================
 
-    document.getElementById("tituloOpcion2")
-    .textContent =
-    datos.opcion2Nombre || "Colores";
+    document.getElementById("nombreModal").textContent =
+        datos.nombre;
 
-    document.getElementById("nombreModal")
-        .textContent = datos.nombre;
+    document.getElementById("precioModal").textContent =
+        "$" + (datos.precios ? datos.precios[0] : datos.precio);
 
-    document.getElementById("precioModal")
-        .textContent = "$" + (datos.precios ? datos.precios[0] : datos.precio);
 
-    document.getElementById("imgPrincipal")
-    .src = datos.imagenes[0];
+    // =========================
+    // IMAGEN PRINCIPAL
+    // =========================
 
-    imagenSeleccionada = datos.imagenes[0];
+    document.getElementById("imgPrincipal").src =
+        datos.imagenes[0];
+
+    imagenSeleccionada =
+        datos.imagenes[0];
+
+
+    // =========================
+    // GALERÍA
+    // =========================
 
     let galeria =
         document.getElementById("galeria");
@@ -204,86 +216,150 @@ function abrirProducto(datos){
     datos.imagenes.forEach(img => {
 
         galeria.innerHTML += `
-            <img src="${img}"
-                 onclick="cambiarImagen('${img}')">
-            
-        
+            <img
+                src="${img}"
+                onclick="cambiarImagen('${img}')"
+            >
         `;
 
     });
+
+
+    // =========================
+    // OPCIÓN 1
+    // =========================
+
     let contenedorTallas =
-    document.getElementById("contenedorTallas");
-    
+        document.getElementById("contenedorTallas");
+
+    let tituloOpcion1 =
+        document.getElementById("tituloOpcion1");
+
     contenedorTallas.innerHTML = "";
-    
-    if(datos.opcion1Nombre){
 
-    contenedorTallas.innerHTML = `
-        <select id="selectorFragancia" class="selector-fragancia">
-            <option value="">Selecciona una fragancia</option>
-            ${(datos.opcion1 || []).map(f =>
-                `<option value="${f}">${f}</option>`
-            ).join("")}
-        </select>
-    `;
+    if(datos.opcion1Nombre && datos.opcion1){
 
-    }else{
-    
-        contenedorTallas.innerHTML = "";
-    
-        (datos.tallas || []).forEach(talla => {
-    
+        tituloOpcion1.textContent =
+            datos.opcion1Nombre;
+
+        contenedorTallas.innerHTML = `
+            <select
+                id="selectorOpcion1"
+                class="selector-fragancia">
+
+                <option value="">
+                    Selecciona ${datos.opcion1Nombre.toLowerCase()}
+                </option>
+
+                ${datos.opcion1.map(opcion => `
+                    <option value="${opcion}">
+                        ${opcion}
+                    </option>
+                `).join("")}
+
+            </select>
+        `;
+
+    }
+
+    else if(datos.tallas){
+
+        tituloOpcion1.textContent =
+            "Talla";
+
+        datos.tallas.forEach(talla => {
+
             contenedorTallas.innerHTML += `
-                <div class="talla"
+                <div
+                    class="talla"
                     onclick="seleccionarTalla(this)">
                     ${talla}
                 </div>
             `;
-    
+
         });
-    
+
     }
+
+    else{
+
+        tituloOpcion1.textContent = "";
+
+    }
+
+
+    // =========================
+    // OPCIÓN 2
+    // =========================
+
     let contenedorColores =
-    document.getElementById("contenedorColores");
-    
+        document.getElementById("contenedorColores");
+
+    let tituloOpcion2 =
+        document.getElementById("tituloOpcion2");
+
     contenedorColores.innerHTML = "";
-    
-    (datos.opcion2 || datos.colores)
-        .forEach((color, indice) => {
-        
-            if(datos.opcion2Nombre){
-        
-                contenedorColores.innerHTML += `
-                    <div class="talla"
-                        onclick="seleccionarColor(
-                            this,
-                            '${color}',
-                            ${indice}
-                        )">
-                        ${color}
-                    </div>
-                `;
-        
-            }else{
-        
-                contenedorColores.innerHTML += `
-                    <div
-                        class="color"
-        
-                        style="background:${datos.coloresHex[indice]}"
-        
-                        onclick="seleccionarColor(
-                            this,
-                            '${color}',
-                            ${indice}
-                        )">
-        
-                    </div>
-                `;
-        
-            }
-        
+
+
+    // Si tiene opcion2 personalizada
+    if(datos.opcion2Nombre && datos.opcion2){
+
+        tituloOpcion2.textContent =
+            datos.opcion2Nombre;
+
+        datos.opcion2.forEach((opcion, indice) => {
+
+            contenedorColores.innerHTML += `
+                <div
+                    class="talla"
+                    onclick="seleccionarOpcion2(
+                        this,
+                        '${opcion}',
+                        ${indice}
+                    )">
+                    ${opcion}
+                </div>
+            `;
+
         });
+
+    }
+
+    // Si tiene colores normales
+    else if(datos.colores){
+
+        tituloOpcion2.textContent =
+            "Color";
+
+        datos.colores.forEach((color, indice) => {
+
+            contenedorColores.innerHTML += `
+                <div
+                    class="color"
+                    style="background:${datos.coloresHex[indice]}"
+                    onclick="seleccionarColor(
+                        this,
+                        '${color}',
+                        ${indice}
+                    )">
+                </div>
+            `;
+
+        });
+
+    }
+
+    else{
+
+        tituloOpcion2.textContent = "";
+
+    }
+
+
+    // =========================
+    // MOSTRAR MODAL
+    // =========================
+
     document
         .getElementById("modalProducto")
         .classList
@@ -291,24 +367,49 @@ function abrirProducto(datos){
 
     document.body.classList.add("modal-abierto");
 
+
+    // =========================
+    // REINICIAR SELECCIONES
+    // =========================
+
     tallaSeleccionada = "";
+
+    opcion1Seleccionada = "";
+
     colorSeleccionado = "";
-    imagenSeleccionada = datos.imagenes[0];
+
+    imagenSeleccionada =
+        datos.imagenes[0];
+
 
     document
-    .querySelectorAll(".talla")
-    .forEach(t =>
-        t.classList.remove("seleccionada")
-    );
+        .querySelectorAll(".talla")
+        .forEach(elemento => {
+
+            elemento.classList.remove(
+                "seleccionada",
+                "seleccionado"
+            );
+
+        });
+
 
     document
-    .querySelectorAll(".color")
-    .forEach(c =>
-        c.classList.remove("seleccionado")
-    );
+        .querySelectorAll(".color")
+        .forEach(elemento => {
+
+            elemento.classList.remove(
+                "seleccionado"
+            );
+
+        });
+
 }
 
-    
+
+// =====================================================
+// CERRAR MODAL
+// =====================================================
 
 function cerrarModal(){
 
@@ -320,58 +421,175 @@ function cerrarModal(){
     document.body.classList.remove("modal-abierto");
 
 }
+
+
+// =====================================================
+// CAMBIAR IMAGEN
+// =====================================================
+
 function cambiarImagen(src){
 
-    document.getElementById("imgPrincipal")
-    .src = src;
+    // Cambiar imagen principal
+    document.getElementById("imgPrincipal").src = src;
 
     imagenSeleccionada = src;
 
+    // Buscar qué posición ocupa esta imagen
     let indice =
-    productoActual.imagenes.indexOf(src);
+        productoActual.imagenes.indexOf(src);
 
-    if(indice !== -1){
+    if(indice === -1){
+        return;
+    }
 
-        colorSeleccionado =
-        (productoActual.opcion2 || productoActual.colores)[indice];
+    // =========================
+    // SINCRONIZAR MILILITROS
+    // =========================
 
+    if(productoActual.opcion2){
+
+        // Quitar selección anterior
         document
-        .querySelectorAll(".color")
-        .forEach(c =>
-            c.classList.remove("seleccionado")
+            .querySelectorAll("#contenedorColores .talla")
+            .forEach(elemento => {
+                elemento.classList.remove(
+                    "seleccionado",
+                    "seleccionada"
+                );
+            });
+
+        // Buscar botones de mililitros
+        let botones =
+            document.querySelectorAll(
+                "#contenedorColores .talla"
+            );
+
+        // Marcar el ml correspondiente
+        if(botones[indice]){
+
+            botones[indice]
+                .classList
+                .add("seleccionado");
+
+            botones[indice]
+                .classList
+                .add("seleccionada");
+        }
+
+        // Guardar el ml seleccionado
+        colorSeleccionado =
+            productoActual.opcion2[indice] || "";
+    }
+
+    // =========================
+    // ACTUALIZAR PRECIO
+    // =========================
+
+    if(productoActual.precios){
+
+        document.getElementById("precioModal")
+            .textContent =
+            "$" + productoActual.precios[indice];
+    }
+}
+
+
+// =====================================================
+// SELECCIONAR TALLA
+// =====================================================
+
+function seleccionarTalla(elemento){
+
+    document
+        .querySelectorAll(
+            "#contenedorTallas .talla"
+        )
+        .forEach(t =>
+            t.classList.remove("seleccionada")
         );
 
-        let colores =
-        document.querySelectorAll(".color");
+    elemento.classList.add("seleccionada");
 
-        if(colores[indice]){
+    tallaSeleccionada =
+        elemento.textContent.trim();
 
-            colores[indice]
-            .classList
-            .add("seleccionado");
+}
 
-        }
+
+// =====================================================
+// SELECCIONAR OPCIÓN 1
+// Ejemplo: Fragancia
+// =====================================================
+
+function seleccionarOpcion1(){
+
+    let selector =
+        document.getElementById("selectorOpcion1");
+
+    if(selector){
+
+        opcion1Seleccionada =
+            selector.value;
 
     }
 
 }
 
 
-let tallaSeleccionada = "";
-let colorSeleccionado = "";
-let imagenSeleccionada = "";
+// =====================================================
+// SELECCIONAR OPCIÓN 2
+// Ejemplo: Talla / Mililitros
+// =====================================================
 
-function seleccionarTalla(elemento){
+function seleccionarOpcion2(
+    elemento,
+    opcion,
+    indice
+){
 
     document
-        .querySelectorAll(".talla")
-        .forEach(t => t.classList.remove("seleccionada"));
+        .querySelectorAll(
+            "#contenedorColores .talla"
+        )
+        .forEach(e =>
+            e.classList.remove("seleccionada")
+        );
 
     elemento.classList.add("seleccionada");
 
-    tallaSeleccionada = elemento.textContent;
+    colorSeleccionado =
+        opcion;
+
+
+    // Cambiar imagen si corresponde
+
+    if(productoActual.imagenes[indice]){
+
+        imagenSeleccionada =
+            productoActual.imagenes[indice];
+
+        document.getElementById("imgPrincipal")
+            .src = imagenSeleccionada;
+
+    }
+
+
+    // Cambiar precio si el producto tiene precios
+    if(productoActual.precios){
+
+        document.getElementById("precioModal")
+            .textContent =
+            "$" + productoActual.precios[indice];
+
+    }
 
 }
+
+
+// =====================================================
+// SELECCIONAR COLOR
+// =====================================================
+
 function seleccionarColor(
     elemento,
     color,
@@ -379,101 +597,268 @@ function seleccionarColor(
 ){
 
     document
-    .querySelectorAll("#contenedorColores .color, #contenedorColores .talla")
-    .forEach(c =>
-        c.classList.remove("seleccionado","seleccionada")
-    );
+        .querySelectorAll(
+            "#contenedorColores .color"
+        )
+        .forEach(c =>
+            c.classList.remove("seleccionado")
+        );
 
     elemento.classList.add("seleccionado");
-    elemento.classList.add("seleccionada");
 
-    colorSeleccionado = color;
+    colorSeleccionado =
+        color;
+
 
     if(productoActual.imagenes[indice]){
 
-        document.getElementById("imgPrincipal")
-        .src =
-        productoActual.imagenes[indice];
-
         imagenSeleccionada =
-        productoActual.imagenes[indice];
+            productoActual.imagenes[indice];
+
+        document.getElementById("imgPrincipal")
+            .src = imagenSeleccionada;
 
     }
+
+
     if(productoActual.precios){
-    document.getElementById("precioModal").textContent =
-    "$" + productoActual.precios[indice];
+
+        document.getElementById("precioModal")
+            .textContent =
+            "$" + productoActual.precios[indice];
+
     }
 
 }
 
 
+// =====================================================
+// AGREGAR DESDE MODAL
+// =====================================================
+
 function agregarDesdeModal(){
 
-    if(document.getElementById("selectorFragancia")){
+    // ==========================================
+    // OPCIÓN 1
+    // ==========================================
 
-        tallaSeleccionada =
-        document.getElementById("selectorFragancia").value;
+    let selectorOpcion1 =
+        document.getElementById("selectorOpcion1");
+
+    if(selectorOpcion1){
+
+        opcion1Seleccionada =
+            selectorOpcion1.value;
+
+        if(opcion1Seleccionada === ""){
+
+            alert(
+                "Selecciona " +
+                productoActual.opcion1Nombre.toLowerCase()
+            );
+
+            return;
+
+        }
 
     }
 
-    if(tallaSeleccionada === ""){
 
-        alert("Selecciona una talla");
-        return;
-    }
-    
+    // ==========================================
+    // TALLA NORMAL
+    // ==========================================
 
+    if(productoActual.tallas){
 
-    if(tallaSeleccionada === ""){
+        if(tallaSeleccionada === ""){
 
-        alert("Selecciona una talla");
-        return;
-    }
+            alert("Selecciona una talla");
 
-    if(colorSeleccionado === ""){
+            return;
 
-        alert("Selecciona un color");
-        return;
+        }
+
     }
 
-    let indiceColor =
-    (productoActual.opcion2 || productoActual.colores)
-    .indexOf(colorSeleccionado);
-    let imagenFinal =
-        productoActual.imagenes[indiceColor];
+
+    // ==========================================
+    // OPCIÓN 2
+    // ==========================================
+
+    if(
+        productoActual.opcion2 &&
+        productoActual.opcion2.length > 0
+    ){
+
+        if(colorSeleccionado === ""){
+
+            alert(
+                "Selecciona " +
+                productoActual.opcion2Nombre.toLowerCase()
+            );
+
+            return;
+
+        }
+
+    }
+
+
+    // ==========================================
+    // COLOR NORMAL
+    // ==========================================
+
+    if(
+        productoActual.colores &&
+        productoActual.colores.length > 0
+    ){
+
+        if(colorSeleccionado === ""){
+
+            alert("Selecciona un color");
+
+            return;
+
+        }
+
+    }
+
+
+    // ==========================================
+    // DETERMINAR VALORES
+    // ==========================================
+
+    let valorTalla = "";
+
+    let valorColor = "";
+
+    let nombreTalla = "";
+
+    let nombreColor = "";
+
+
+    // Producto con tallas normales
+
+    if(productoActual.tallas){
+
+        valorTalla =
+            tallaSeleccionada;
+
+        nombreTalla =
+            "Talla";
+
+    }
+
+
+    // Producto con opción 1
+
+    if(productoActual.opcion1){
+
+        valorTalla =
+            opcion1Seleccionada;
+
+        nombreTalla =
+            productoActual.opcion1Nombre;
+
+    }
+
+
+    // Producto con opción 2
+
+    if(productoActual.opcion2){
+
+        valorColor =
+            colorSeleccionado;
+
+        nombreColor =
+            productoActual.opcion2Nombre;
+
+    }
+
+
+    // Producto con colores
+
+    if(productoActual.colores){
+
+        valorColor =
+            colorSeleccionado;
+
+        nombreColor =
+            "Color";
+
+    }
+
+
+    // ==========================================
+    // PRECIO
+    // ==========================================
+
+    let indiceOpcion2 =
+        productoActual.opcion2
+            ? productoActual.opcion2.indexOf(
+                colorSeleccionado
+            )
+            : productoActual.colores
+                ? productoActual.colores.indexOf(
+                    colorSeleccionado
+                )
+                : 0;
+
+
+    let precioFinal =
+        productoActual.precios
+            ? productoActual.precios[indiceOpcion2]
+            : productoActual.precio;
+
+
+    // ==========================================
+    // AGREGAR AL CARRITO
+    // ==========================================
 
     carrito.push({
 
-    nombre: productoActual.nombre,
+        nombre:
+            productoActual.nombre,
 
-    precio: productoActual.precios
-        ? productoActual.precios[indiceColor]
-        : productoActual.precio,
+        precio:
+            precioFinal,
 
-    imagen: imagenSeleccionada,
+        imagen:
+            imagenSeleccionada,
 
-    talla: tallaSeleccionada,
+        talla:
+            valorTalla,
 
-    color: colorSeleccionado,
+        color:
+            valorColor,
 
-    nombreTalla:
-        productoActual.opcion1Nombre || "Talla",
+        nombreTalla:
+            nombreTalla,
 
-    nombreColor:
-        productoActual.opcion2Nombre || "Color"
+        nombreColor:
+            nombreColor
 
-});
+    });
+
 
     actualizarCarrito();
 
     cerrarModal();
 
+
+    // ==========================================
+    // LIMPIAR
+    // ==========================================
+
     tallaSeleccionada = "";
+
+    opcion1Seleccionada = "";
+
     colorSeleccionado = "";
+
     imagenSeleccionada = "";
 
-}
-
+} 
 function generarFactura(){
 
     let nombre =
