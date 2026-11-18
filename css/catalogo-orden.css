@@ -1,0 +1,142 @@
+/* ==========================================================
+   ORDEN DEL CATÁLOGO
+   Cada sección (Camisetas, Gorras, Polos...) va una debajo de
+   la otra, y dentro de cada marca las tarjetas van en rejilla.
+   ========================================================== */
+
+/* El contenedor general ya NO es una rejilla: así las secciones
+   dejan de ponerse en columnas una al lado de la otra */
+#productos-supabase {
+    display: block;
+}
+
+#catalogo-supabase {
+    padding: 40px 50px 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.seccion-catalogo {
+    padding: 0;
+    margin-bottom: 60px;
+}
+
+.seccion-catalogo > h2 {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    padding-bottom: 12px;
+    position: relative;
+}
+
+.seccion-catalogo > h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 70px;
+    height: 3px;
+    background: currentColor;
+}
+
+.grupo-productos {
+    margin-top: 28px;
+}
+
+.grupo-productos > h3 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 16px;
+}
+
+/* Rejilla de tarjetas de cada marca */
+.grupo-productos .productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 24px;
+}
+
+.grupo-productos .producto {
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.grupo-productos .producto img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.grupo-productos .producto h3 {
+    margin: 12px 0 4px;
+    font-size: 1rem;
+    min-height: 2.6em;
+}
+
+.grupo-productos .producto p {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: 0 0 14px;
+}
+
+/* El botón siempre queda abajo, aunque el nombre ocupe 1 o 2 líneas */
+.grupo-productos .producto button {
+    margin-top: auto;
+    font-weight: 600;
+    min-height: 44px;
+    cursor: pointer;
+}
+
+/* Tabletas */
+@media (max-width: 768px) {
+    #catalogo-supabase {
+        padding: 28px 18px 50px;
+    }
+
+    .seccion-catalogo > h2 {
+        font-size: 1.4rem;
+    }
+
+    .grupo-productos .productos {
+        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+        gap: 14px;
+    }
+}
+
+/* Celulares: 2 productos por fila */
+@media (max-width: 480px) {
+    #catalogo-supabase {
+        padding: 24px 14px 50px;
+    }
+
+    .grupo-productos .productos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .grupo-productos .producto {
+        padding: 10px;
+        border-radius: 14px;
+    }
+
+    .grupo-productos .producto h3 {
+        font-size: 0.9rem;
+    }
+
+    .grupo-productos .producto p {
+        font-size: 0.95rem;
+        margin-bottom: 10px;
+    }
+
+    .grupo-productos .producto button {
+        font-size: 0.8rem;
+        padding: 10px 4px;
+    }
+}

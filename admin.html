@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración | Zona Style</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+    <main class="contenedor">
+
+        <section id="login" class="login">
+            <h1>Zona Style</h1>
+            <p>Panel de administración</p>
+
+            <form id="formLogin">
+                <label>Correo electrónico</label>
+                <input type="email" id="correo" required>
+
+                <label>Contraseña</label>
+                <input type="password" id="contrasena" required>
+
+                <button type="submit">Iniciar sesión</button>
+                <p id="mensajeLogin"></p>
+            </form>
+        </section>
+
+        <section id="panel" hidden>
+
+            <header class="encabezado">
+                <div>
+                    <h1>Zona Style</h1>
+                    <p>Panel de administración</p>
+                </div>
+                <button id="btnCerrarSesion" class="btn-salir">
+                    Cerrar sesión
+                </button>
+            </header>
+
+            <div class="resumen">
+                <article>
+                    <span>Productos</span>
+                    <strong id="totalProductos">0</strong>
+                </article>
+
+                <article>
+                    <span>Categorías</span>
+                    <strong id="totalCategorias">0</strong>
+                </article>
+            </div>
+
+            <!-- ADMINISTRAR SECCIONES Y MARCAS -->
+            <section class="seccion-productos">
+                <h2>Administrar secciones y marcas</h2>
+
+                <form id="formNuevaCategoria">
+                    <label>Nombre de la sección</label>
+                    <input
+                        type="text"
+                        id="nombreSeccion"
+                        placeholder="Ejemplo: Camisetas"
+                        required
+                    >
+
+                    <label>Nombre de la marca o categoría</label>
+                    <input
+                        type="text"
+                        id="nombreMarca"
+                        placeholder="Ejemplo: Nike"
+                        required
+                    >
+
+                    <label>Orden de la sección</label>
+                    <input
+                        type="number"
+                        id="ordenSeccion"
+                        value="0"
+                        min="0"
+                        required
+                    >
+
+                    <label>Orden de la marca</label>
+                    <input
+                        type="number"
+                        id="ordenMarca"
+                        value="0"
+                        min="0"
+                        required
+                    >
+
+                    <button type="submit">Crear sección y marca</button>
+                </form>
+
+                <p id="mensajeCategorias"></p>
+
+                <div id="listaCategoriasAdmin"></div>
+            </section>
+
+            <section class="seccion-productos">
+                <div class="titulo-seccion">
+                    <h2>Mis productos</h2>
+                    <button id="btnNuevoProducto">+ Agregar producto</button>
+                </div>
+                <form id="formProducto" hidden>
+
+                    <h3>Nuevo producto</h3>
+
+                    <label>Nombre del producto</label>
+                    <input type="text" id="nuevoNombre" required>
+
+                    <label>Categoría</label>
+                    <select id="nuevaCategoria" required>
+                        <option value="">Cargando categorías...</option>
+                    </select>
+
+                    <label>Descripción</label>
+                    <textarea id="nuevaDescripcion" rows="4"></textarea>
+
+                    <div id="campoPrecio">
+                        <label>Precio</label>
+                        <input type="number" id="nuevoPrecio" min="0">
+                    </div>
+
+                    <label>Imágenes del producto</label>
+                    <input
+                        type="file"
+                        id="nuevasImagenes"
+                        accept="image/*"
+                        multiple
+                    >
+                    <div id="contenedorImagenesSeleccionadas"></div>
+
+                    <div id="variantesCamiseta" hidden>
+                        <h3>Variantes de la camiseta</h3>
+
+                        <label>Tallas disponibles (separadas por coma)</label>
+                        <input
+                            type="text"
+                            id="tallasCamiseta"
+                            placeholder="S, M, L, XL"
+                        >
+
+                        <h4>Colores</h4>
+                        <div id="contenedorColores"></div>
+
+                        <button type="button" id="btnAgregarColor">
+                            + Agregar color
+                        </button>
+                    </div>
+                    <div id="variantesCombo" hidden>
+                        <h3>Tallas del combo</h3>
+
+                        <label>Tallas disponibles (separadas por coma)</label>
+                        <input
+                            type="text"
+                            id="tallasCombo"
+                            placeholder="M, L, XL"
+                        >
+                        <p>La primera imagen de la lista es la que se muestra en el carrito.</p>
+                    </div>
+
+                    <div id="variantesLocion" hidden>
+                        <h3>Fragancias</h3>
+
+                        <label>Lista de fragancias (separadas por coma o una por línea)</label>
+                        <textarea
+                            id="fraganciasLocion"
+                            rows="5"
+                            placeholder="Issey Miyake, CR7, Sauvage"
+                        ></textarea>
+
+                        <h3>Presentaciones</h3>
+                        <p>Cada presentación tiene su propio precio y su imagen.</p>
+                        <div id="contenedorPresentaciones"></div>
+
+                        <button type="button" id="btnAgregarPresentacion">
+                            + Agregar presentación
+                        </button>
+                    </div>
+
+                    <p> Puedes seleccionar varias imágenes. </p>
+
+                    <div style="display:flex; gap:10px; margin-top:20px;">
+                        <button type="submit">Guardar producto</button>
+                        <button type="button" id="btnCancelarProducto">
+                            Cancelar
+                        </button>
+                    </div>
+
+                </form>
+
+                <div id="listaProductos">
+                    Cargando productos...
+                </div>
+            </section>
+
+            <section class="seccion-productos" id="seccionEditar" hidden>
+                <h2>Editar producto</h2>
+                <form id="formEditarProducto"></form>
+                <p id="mensajeEdicion"></p>
+            </section>
+
+            <p id="mensajePanel"></p>
+
+        </section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-config.js"></script>
+    <script src="js/secciones-config.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/admin-editar.js"></script>
+
+</body>
+</html>
+

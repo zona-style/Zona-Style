@@ -1,3 +1,8 @@
+// Muestra los precios con puntos de miles: 74900 -> $74.900
+function formatoPrecio(valor) {
+    return "$" + (Number(valor) || 0).toLocaleString("es-CO");
+}
+
 let carrito = [];
 
 // AGREGAR PRODUCTO
@@ -42,9 +47,9 @@ function actualizarCarrito(){
 
             <div>
                 <h4>${producto.nombre}</h4>
-                <p>${producto.nombreColor}: ${producto.color}</p>
-                <p>${producto.nombreTalla}: ${producto.talla}</p>
-                <p>$${producto.precio}</p>
+                ${producto.color ? `<p>${producto.nombreColor}: ${producto.color}</p>` : ""}
+                ${producto.talla ? `<p>${producto.nombreTalla}: ${producto.talla}</p>` : ""}
+                <p>${formatoPrecio(producto.precio)}</p>
             </div>
 
             <button onclick="eliminarProducto(${index})">
@@ -58,7 +63,7 @@ function actualizarCarrito(){
 
     carritoHTML += `
     <div class="total-carrito">
-        <h3>Total: $${total}</h3>
+        <h3>Total: ${formatoPrecio(total)}</h3>
     </div>
 
     <button onclick="generarFactura()" class="btn-factura">
@@ -190,7 +195,7 @@ function abrirProducto(datos){
         datos.nombre;
 
     document.getElementById("precioModal").textContent =
-        "$" + (datos.precios ? datos.precios[0] : datos.precio);
+        formatoPrecio(datos.precios ? datos.precios[0] : datos.precio);
 
 
     // =========================
@@ -427,69 +432,55 @@ function cerrarModal(){
 // CAMBIAR IMAGEN
 // =====================================================
 
-function cambiarImagen(src){
+function cambiarImagen(src) {
 
-    // Cambiar imagen principal
     document.getElementById("imgPrincipal").src = src;
-
     imagenSeleccionada = src;
 
-    // Buscar qué posición ocupa esta imagen
-    let indice =
-        productoActual.imagenes.indexOf(src);
+    const indice = productoActual.imagenes.indexOf(src);
 
-    if(indice === -1){
-        return;
-    }
+    if (indice === -1) return;
 
-    // =========================
-    // SINCRONIZAR MILILITROS
-    // =========================
+    // SINCRONIZAR MILILITROS / OPCIONES
+    if (productoActual.opcion2) {
 
-    if(productoActual.opcion2){
+        const botones = document.querySelectorAll(
+            "#contenedorColores .talla"
+        );
 
-        // Quitar selección anterior
-        document
-            .querySelectorAll("#contenedorColores .talla")
-            .forEach(elemento => {
-                elemento.classList.remove(
-                    "seleccionado",
-                    "seleccionada"
-                );
-            });
+        botones.forEach(elemento => {
+            elemento.classList.remove("seleccionado", "seleccionada");
+        });
 
-        // Buscar botones de mililitros
-        let botones =
-            document.querySelectorAll(
-                "#contenedorColores .talla"
-            );
-
-        // Marcar el ml correspondiente
-        if(botones[indice]){
-
-            botones[indice]
-                .classList
-                .add("seleccionado");
-
-            botones[indice]
-                .classList
-                .add("seleccionada");
+        if (botones[indice]) {
+            botones[indice].classList.add("seleccionado", "seleccionada");
         }
 
-        // Guardar el ml seleccionado
-        colorSeleccionado =
-            productoActual.opcion2[indice] || "";
+        colorSeleccionado = productoActual.opcion2[indice] || "";
+
+    } 
+    // SINCRONIZAR COLORES DE SUPABASE
+    else {
+
+        const botones = document.querySelectorAll(
+            "#contenedorColores .color"
+        );
+
+        botones.forEach(elemento => {
+            elemento.classList.remove("seleccionado");
+        });
+
+        if (botones[indice]) {
+            botones[indice].classList.add("seleccionado");
+        }
+
+        colorSeleccionado = productoActual.colores?.[indice] || "";
     }
 
-    // =========================
     // ACTUALIZAR PRECIO
-    // =========================
-
-    if(productoActual.precios){
-
-        document.getElementById("precioModal")
-            .textContent =
-            "$" + productoActual.precios[indice];
+    if (productoActual.precios) {
+        document.getElementById("precioModal").textContent =
+            formatoPrecio(productoActual.precios[indice]);
     }
 }
 
@@ -498,21 +489,15 @@ function cambiarImagen(src){
 // SELECCIONAR TALLA
 // =====================================================
 
-function seleccionarTalla(elemento){
+function seleccionarTalla(elemento) {
 
     document
-        .querySelectorAll(
-            "#contenedorTallas .talla"
-        )
-        .forEach(t =>
-            t.classList.remove("seleccionada")
-        );
+        .querySelectorAll("#contenedorTallas .talla")
+        .forEach(t => t.classList.remove("seleccionada"));
 
     elemento.classList.add("seleccionada");
 
-    tallaSeleccionada =
-        elemento.textContent.trim();
-
+    tallaSeleccionada = elemento.textContent.trim();
 }
 
 
@@ -579,7 +564,7 @@ function seleccionarOpcion2(
 
         document.getElementById("precioModal")
             .textContent =
-            "$" + productoActual.precios[indice];
+            formatoPrecio(productoActual.precios[indice]);
 
     }
 
@@ -625,7 +610,7 @@ function seleccionarColor(
 
         document.getElementById("precioModal")
             .textContent =
-            "$" + productoActual.precios[indice];
+            formatoPrecio(productoActual.precios[indice]);
 
     }
 
@@ -824,7 +809,9 @@ function agregarDesdeModal(){
             precioFinal,
 
         imagen:
-            imagenSeleccionada,
+            (productoActual.esCombo && productoActual.imagenPortada)
+                ? productoActual.imagenPortada
+                : imagenSeleccionada,
 
         talla:
             valorTalla,
@@ -910,7 +897,7 @@ function generarFactura(){
 
             <td>${producto.color}</td>
 
-            <td>$${producto.precio}</td>
+            <td>${formatoPrecio(producto.precio)}</td>
 
         </tr>
 
@@ -1119,7 +1106,7 @@ function generarFactura(){
                 <br><br>
     
                 Total:
-                $${total}
+                ${formatoPrecio(total)}
     
             </div>
             <div style="text-align:center;margin-top:30px;">

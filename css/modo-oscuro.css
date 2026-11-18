@@ -1,0 +1,296 @@
+/* ==========================================================
+   MODO OSCURO
+   Para quitarlo: borra la línea <link ... modo-oscuro.css>
+   de index.html.
+   Los colores se cambian aquí arriba, en las variables.
+   ========================================================== */
+
+:root {
+    color-scheme: dark; /* barras de desplazamiento y listas desplegables oscuras */
+
+    --fondo: #000000;
+    --superficie: #111111;      /* tarjetas, modal */
+    --superficie-2: #1b1b1b;    /* campos, botones secundarios */
+    --panel: #0b0b0b;           /* menú y carrito */
+    --borde: #2c2c2c;
+    --borde-fuerte: #4a4a4a;
+    --texto: #f4f4f4;
+    --texto-suave: #b0b0b0;
+    --resalte: #ffffff;         /* botones principales */
+    --resalte-texto: #000000;
+}
+
+body {
+    background: var(--fondo);
+    color: var(--texto);
+}
+
+/* ---------- Encabezado ---------- */
+
+header {
+    background: var(--fondo);
+    box-shadow: 0 1px 0 var(--borde);
+}
+
+.logo a {
+    color: var(--texto);
+}
+
+#buscador {
+    background: var(--superficie-2);
+    color: var(--texto);
+    border: 1px solid var(--borde-fuerte);
+}
+
+#buscador::placeholder,
+#datos-cliente input::placeholder {
+    color: #8c8c8c;
+}
+
+#buscador:focus,
+#datos-cliente input:focus,
+#datos-cliente select:focus,
+.selector-fragancia:focus {
+    outline: none;
+    border-color: var(--resalte);
+}
+
+/* ---------- Banners ---------- */
+
+.carrusel-promos {
+    border-top: 1px solid var(--borde);
+    border-bottom: 1px solid var(--borde);
+}
+
+.promo {
+    background: #0a0a0a;
+}
+
+.btn-banner {
+    border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+/* ---------- Menú lateral ---------- */
+
+#menu-lateral {
+    background: var(--panel);
+    color: var(--texto);
+    border-right: 1px solid var(--borde);
+}
+
+.categoria h3 {
+    color: var(--texto);
+}
+
+.categoria a,
+#menu-lateral > a {
+    color: var(--texto-suave);
+}
+
+.categoria a:hover,
+#menu-lateral > a:hover {
+    color: var(--texto);
+}
+
+/* Botones pequeños (cerrar menú, cerrar carrito, quitar del carrito) */
+#menu-lateral > button,
+.carrito-top > button,
+.item-carrito button {
+    background: var(--superficie-2);
+    color: var(--texto);
+    border: 1px solid var(--borde-fuerte);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#menu-lateral > button:hover,
+.carrito-top > button:hover,
+.item-carrito button:hover {
+    background: #2a2a2a;
+}
+
+/* Tamaño cómodo de los botones "X" (también en computador) */
+#menu-lateral > button,
+.carrito-top > button {
+    min-width: 40px;
+    min-height: 40px;
+}
+
+.item-carrito button {
+    align-self: flex-start;
+    margin-left: auto;
+    min-width: 40px;
+    min-height: 40px;
+}
+
+/* ---------- Tarjetas de productos ---------- */
+
+.producto {
+    background: var(--superficie);
+    border: 1px solid var(--borde);
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.producto:hover {
+    transform: translateY(-4px);
+    border-color: var(--borde-fuerte);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.7);
+}
+
+.producto img {
+    background: #ffffff; /* las fotos tienen fondo claro: se muestran sobre un marco blanco */
+}
+
+.grupo-productos > h3 {
+    color: var(--texto-suave);
+}
+
+.producto button {
+    background: var(--resalte);
+    color: var(--resalte-texto);
+}
+
+.producto button:hover {
+    background: #d6d6d6;
+}
+
+/* ---------- Carrito ---------- */
+
+#carrito {
+    background: var(--panel);
+    color: var(--texto);
+    border-left: 1px solid var(--borde);
+}
+
+.item-carrito {
+    border-bottom: 1px solid var(--borde);
+}
+
+.item-carrito img {
+    background: #ffffff;
+    border-radius: 8px;
+}
+
+#datos-cliente input,
+#datos-cliente select {
+    background: var(--superficie-2);
+    color: var(--texto);
+    border: 1px solid var(--borde-fuerte);
+}
+
+.btn-factura {
+    background: var(--resalte);
+    color: var(--resalte-texto);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-factura:hover {
+    background: #d6d6d6;
+}
+
+/* ---------- Modal del producto ---------- */
+
+.modal {
+    background: rgba(0, 0, 0, 0.88);
+}
+
+.modal-contenido {
+    background: var(--superficie);
+    color: var(--texto);
+    border: 1px solid var(--borde);
+}
+
+.cerrar-modal {
+    color: var(--texto);
+    font-size: 32px;
+    cursor: pointer;
+}
+
+/* Tallas y colores alineados a la izquierda, igual que sus títulos */
+.tallas,
+.colores {
+    justify-content: flex-start;
+}
+
+.imagen-principal {
+    background: #ffffff;
+    border-radius: 12px;
+}
+
+.galeria img {
+    background: #ffffff;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.galeria img:hover {
+    border-color: #888888;
+}
+
+.subtitulo {
+    color: var(--texto-suave);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    margin-top: 18px;
+    margin-bottom: 8px;
+}
+
+.descripcion {
+    color: var(--texto-suave);
+}
+
+.precio-modal {
+    font-weight: 700;
+}
+
+.talla {
+    background: transparent;
+    color: var(--texto);
+    border: 1px solid var(--borde-fuerte);
+}
+
+.talla:hover {
+    border-color: var(--resalte);
+}
+
+.talla.seleccionada {
+    background: var(--resalte);
+    color: var(--resalte-texto);
+    border: 2px solid var(--resalte);
+}
+
+.color {
+    border: 2px solid #666666;
+}
+
+.color.seleccionado {
+    border: 3px solid var(--resalte);
+    box-shadow: 0 0 0 2px #000000, 0 0 14px rgba(255, 255, 255, 0.35);
+}
+
+.selector-fragancia {
+    background: var(--superficie-2);
+    color: var(--texto);
+    border: 1px solid var(--borde-fuerte);
+}
+
+.btn-modal {
+    background: var(--resalte);
+    color: var(--resalte-texto);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn-modal:hover {
+    background: #d6d6d6;
+}
+
+/* ---------- Íconos flotantes ---------- */
+
+.whatsapp-float img,
+.instagram-float img {
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15), 0 4px 14px rgba(0, 0, 0, 0.6);
+}

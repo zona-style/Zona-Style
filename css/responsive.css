@@ -302,3 +302,100 @@
     }
 
 }
+
+/* ==========================================================
+   AJUSTES PARA CELULAR (agregados al final de responsive.css)
+   ========================================================== */
+
+/* 1. Íconos flotantes: redondos, con sombra, y por DEBAJO del modal.
+      (los PNG tienen fondo blanco cuadrado, por eso se recortan en círculo) */
+.whatsapp-float img,
+.instagram-float img {
+    border-radius: 50%;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.28);
+}
+
+.modal {
+    z-index: 10000;
+}
+
+@media (max-width: 768px) {
+
+    /* 2. Botones de cierre (modal, menú y carrito) fáciles de tocar */
+    .cerrar-modal {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        font-size: 32px;
+        cursor: pointer;
+    }
+
+    #menu-lateral > button,
+    .carrito-top > button {
+        min-width: 44px;
+        min-height: 44px;
+        font-size: 18px;
+        border-radius: 8px;
+    }
+
+    /* 3. Menú: enlaces más cómodos de tocar */
+    #menu-lateral a {
+        display: block;
+        padding: 8px 0;
+    }
+
+    /* 4. Tarjetas: aire entre el precio y el botón */
+    .producto p {
+        margin: 6px 0 12px;
+    }
+
+    .producto h3 {
+        margin: 10px 0 4px;
+    }
+
+    /* 5. Modal: sin el hueco enorme al final (los íconos ya no lo tapan) */
+    .modal-contenido {
+        padding-bottom: 30px;
+    }
+
+    .producto-modal h2,
+    .producto-modal h3 {
+        margin-bottom: 4px;
+    }
+
+    /* 6. Lista de fragancias: ancho completo y legible */
+    .selector-fragancia {
+        width: 100%;
+        padding: 13px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background: #fff;
+    }
+
+    /* 7. Tallas y presentaciones: botones con tamaño cómodo */
+    .talla {
+        min-width: 48px;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* 8. Carrito y datos del cliente: campos grandes (evita el zoom de iPhone al escribir) */
+    #datos-cliente input,
+    #datos-cliente select {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Botón para quitar un producto del carrito */
+    .item-carrito button {
+        min-width: 44px;
+        min-height: 44px;
+        border-radius: 8px;
+    }
+}

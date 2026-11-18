@@ -1,1201 +1,269 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>zona Style</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>zona Style</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+        <link rel="stylesheet" href="css/catalogo-orden.css">
+        <link rel="stylesheet" href="css/modo-oscuro.css">
+    </head>
 
-<body id="inicio">
-    <!-- CARRITO -->
+    <body id="inicio">
+        <!-- CARRITO -->
 
-    <div id="carrito">
+        <div id="carrito">
 
-        <div class="carrito-top">
+            <div class="carrito-top">
 
-            <h2>Tu carrito</h2>
+                <h2>Tu carrito</h2>
 
-            <button onclick="abrirCarrito()">
-                X
-            </button>
-            
-        </div>
-
-        <div id="carrito-items"></div>
-            
-        
-        <div id="datos-cliente">
-            <h3><strong>INGRESE SUS DATOS</strong></h3>
-            <input type="text" id="nombreCliente"
-            placeholder="Nombre completo">
-
-            <input type="text" id="documentoCliente"
-            placeholder="Documento">
-
-            <input type="text" id="telefonoCliente"
-            placeholder="Teléfono">
-
-            <input type="text" id="direccionCliente"
-            placeholder="Dirección">
-
-            <select id="metodoPago">
-                <option>Efectivo</option>
-                <option>Nequi</option>
-                <option>Daviplata</option>
-                <option>Transferencia</option>
-            </select>
-
-            
-
-        </div>
-         
-
-    </div>
-
-    
-<header>
-
-    <div class="menu-icon"
-    onclick="abrirMenu()">
-
-        ☰
-
-    </div>
-
-
-    <h1 class="logo">
-        <a href="#inicio">Zona Style</a>
-    </h1>
-
-    <div class="icons">
-
-        <input
-        type="text"
-        id="buscador"
-        placeholder="Buscar..."
-        onkeyup="if(event.key==='Enter') buscarProductos()">
-
-        <span class="carrito-icon"
-         onclick="abrirCarrito()">
-            🛒 
-            <span id="contador">0</span>
-        </span>
-
-     </div>
-
-</header>
-
-<!-- MENU LATERAL -->
-
-<div id="menu-lateral">
-
-    <button onclick="abrirMenu()">X</button>
-
-        <div class="categoria">
-          
-            <a href="#inicio"><h3>Inicio</h3></a>
-        </div> 
-    
-        <div class="categoria">
-          <h3>Promociones</h3>
-          <!--<a href="#combos">Combos</a>-->
-          <a href="#promo-camisetas">Camisetas</a>
-          <!--<a href="#relojes">Relojes</a>-->
-        </div>
-        
-        <div class="categoria">
-          <h3>Camisetas</h3>
-
-          <a href="#boss">Boss</a>
-          <a href="#nike">Nike</a> 
-          <a href="#undergold">Undergold</a>
-          <!--<a href="#lacoste">Lacoste</a>
-          <a href="#monastery">Monastery</a>-->
-          
-          
-        
-        </div>
-
-    <div class="categoria">
-        <h3>Relojes</h3>
-
-    <!--<a href=#richardmille>Richard Mille</a> -->
-        <a href="#rolex">Rolex</a>
-        <a href="#invicta">Invicta</a>
-        <!--<a href="#patekphilippe">patek philippe</a> -->
-    </div>
-
-    <div class="categoria">
-        <h3>Perfumes</h3>
-
-        <a href="#amaderadas">Amaderadas</a>
-        <a href="#dulces">Dulces</a>
-        <a href="#citricas">Cítricas</a>
-    </div>
-
-
-</div>
-    <!-- BANNER -->
-    <section class="carrusel-banner">
-
-          <div class="slide activo">
-      
-              <img src="img/banners/banner-zona-style.png">
-      
-          </div>
-      
-          <div class="slide">
-      
-              <img src="img/banners/banner-promo.jpg">
-      
-              <div class="contenido-banner">
-      
-                  <h2>Promociones Exclusivas</h2>
-      
-                  <a href="#promo-camisetas" class="btn-banner">
-                      Ver Promo
-                  </a>
-      
-              </div>
-      
-          </div>
-      
-          <div class="slide">
-      
-              <img src="img/banners/banner-relojs.jpg">
-      
-              <div class="contenido-banner">
-      
-                  <h2>Relojs De La Mejor Calidad</h2>
-      
-                  <a href="#rolex" class="btn-banner">
-                      Ver Relojs
-                  </a>
-      
-              </div>
-      
-          </div>
-      
-          <div class="slide">
-      
-              <img src="img/banners/banner-perfumes.jpg">
-      
-              <div class="contenido-banner">
-      
-                  <h2>Las Mejores Fragancias</h2>
-      
-                  <a href="#amaderadas" class="btn-banner">
-                      Ver Perfumes
-                  </a>
-      
-              </div>
-      
-          </div>
-      
-          <div class="slide">
-      
-              <img src="img/banners/banner-marcas.jpg">
-      
-              <div class="contenido-banner">
-      
-                  <h2>Las Mejores Marcas exclusivas</h2>
-      
-                  <a href="#boss" class="btn-banner">
-                      Ver Productos
-                  </a>
-      
-              </div>
-      
-          </div>
-          <button class="nav-banner prev">❮</button>
-          <button class="nav-banner next">❯</button>
-
-          <div class="indicadores"></div>
-    </section>
-<div class="carrusel-promos">
-
-    <div class="promo activa">
-        🔥 LA MEJOR CALIDAD
-    </div>
-
-    <div class="promo">
-        ⌚ RELOJES DESDE $79.900
-    </div>
-
-    <div class="promo">
-        🚚 ENVÍOS A TODO COLOMBIA
-    </div>
-
-    <div class="promo">
-        💳 PAGA CONTRA ENTREGA
-    </div>
-
-</div>
-
-    <!-- COMBOS -->
-    <section id="combos">
-        <h2>COMBOS</h2>
-        <div class="productos">
-            <div class="producto">
-                <img src="img/combos/boss/combo-boss-blanco-cm-grr-rj.jpg" alt="">
-
-                <h3>BOSS</h3>
-
-                <p>$159,900</p>
-
-                <button onclick='abrirProducto({
-
-                        nombre:"Combo Boss",
-                    
-                        precio:159900,
-                    
-                        imagenes:[
-                            "img/combos/boss/combo-boss-blanco-cm-grr-rj.jpg",
-                            "img/camisetas/hugo-boss/boss-blanca.jpeg",
-                            "img/relojes/invicta/invicta-plateado.jpeg",
-                            "img/combos/grr-blanca.jpg",
-                            
-                            
-                        ],
-                    
-                        
-                    
-                        opcion2Nombre:"Talla",
-                    
-                        opcion2:[
-                            "L",
-                            
-                        ],
-
-                       
-                    
-                    })'>
-                    Agregar al carrito
+                <button onclick="abrirCarrito()">
+                    X
                 </button>
-            </div>
-            <div class="producto">
-                <img src="img/combos/boss/combo-boss-blanco-cm-grr.jpg" alt="">
-
-                <h3>BOSS</h3>
-
-                <p>$109,900</p>
-
-                <button onclick='abrirProducto({
-
-                        nombre:"Combo Boss",
-                    
-                        precio:109900,
-                    
-                        imagenes:[
-                            "img/combos/boss/combo-boss-blanco-cm-grr.jpg",
-                            "img/camisetas/hugo-boss/boss-blanca.jpeg",
-                            
-                            "img/combos/grr-blanca.jpg",
-                            
-                            
-                        ],
-                    
-                        
-                    
-                        opcion2Nombre:"Talla",
-                    
-                        opcion2:[
-                            "L",
-                            
-                        ],
-
-                       
-                    
-                    })'>
-                    Agregar al carrito
-                </button>
-            </div>
-            <div class="producto">
-                <img src="img/combos/boss/combo-boss-blanco-cm-rj-2.jpg" alt="">
-
-                <h3>BOSS</h3>
-
-                <p>$129,900</p>
-
-                <button onclick='abrirProducto({
-
-                        nombre:"Combo Boss",
-                    
-                        precio:129900,
-                    
-                        imagenes:[
-                            "img/combos/boss/combo-boss-blanco-cm-rj-2.jpg",
-                            "img/camisetas/hugo-boss/boss-blanca.jpeg",
-                            "img/relojes/rolex/rolex-dejuv-negro.jpeg",
-                            
-                            
-                            
-                        ],
-                    
-                        
-                    
-                        opcion2Nombre:"Talla",
-                    
-                        opcion2:[
-                            "L",
-                            
-                        ],
-
-                       
-                    
-                    })'>
-                    Agregar al carrito
-                </button>
-            </div>
-            <div class="producto">
-                <img src="img/combos/boss/combo-boss-blanco-cm-rj.jpg" alt="">
-
-                <h3>BOSS</h3>
-
-                <p>$129,900</p>
-
-                <button onclick='abrirProducto({
-
-                        nombre:"Combo Boss",
-                    
-                        precio:129900,
-                    
-                        imagenes:[
-                            "img/combos/boss/combo-boss-blanco-cm-rj.jpg",
-                            "img/camisetas/hugo-boss/boss-blanca.jpeg",
-                            "img/relojes/invicta/invicta-plateado.jpeg",
-                            
-                            
-                            
-                        ],
-                    
-                        
-                    
-                        opcion2Nombre:"Talla",
-                    
-                        opcion2:[
-                            "L",
-                            
-                        ],
-
-                       
-                    
-                    })'>
-                    Agregar al carrito
-                </button>
-            </div>
-            <div class="producto">
-                <img src="img/combos/boss/combo-boss-negro-cm-grr-rj.jpg" alt="">
-
-                <h3>BOSS</h3>
-
-                <p>$159,900</p>
-
-                <button onclick='abrirProducto({
-
-                        nombre:"Combo Boss",
-                    
-                        precio:159900,
-                    
-                        imagenes:[
-                            "img/combos/boss/combo-boss-negro-cm-grr-rj.jpg",
-                            "img/camisetas/hugo-boss/camiseta-hugo-firma-negra.jpg",
-                            "img/relojes/invicta/invicta-plateado.jpeg",
-                            "img/combos/grr-negra.jpg",
-                            
-                            
-                        ],
-                    
-                        
-                    
-                        opcion2Nombre:"Talla",
-                    
-                        opcion2:[
-                            "L",
-                            
-                        ],
-
-                       
-                    
-                    })'>
-                    Agregar al carrito
-                </button>
-            </div>
-            <div class="producto">
-                <img src="img/combos/boss/combo-boss-negro-cm-grr.jpg" alt="">
-
-                <h3>BOSS</h3>
-
-                <p>$109,900</p>
-
-                <button onclick='abrirProducto({
-
-                        nombre:"Combo Boss",
-                    
-                        precio:109900,
-                    
-                        imagenes:[
-                            "img/combos/boss/combo-boss-negro-cm-grr.jpg",
-                            "img/camisetas/hugo-boss/camiseta-hugo-firma-negra.jpg",
-                            
-                            "img/combos/grr-negra.jpg",
-                            
-                            
-                        ],
-                    
-                        
-                    
-                        opcion2Nombre:"Talla",
-                    
-                        opcion2:[
-                            "L",
-                            
-                        ],
-
-                       
-                    
-                    })'>
-                    Agregar al carrito
-                </button>
-            </div>
-            
-            <div class="producto">
-                <img src="img/combos/armani/combo-armani-negro-pl-rj.jpg" alt="">
-
-                <h3>ARMANI</h3>
-
-                <p>$129,900</p>
-
-                <button onclick='abrirProducto({
-
-                        nombre:"Combo Armani",
-                    
-                        precio:129900,
-                    
-                        imagenes:[
-                            "img/combos/armani/combo-armani-negro-pl-rj.jpg",
-                            "img/camisetas/armani/polo-armani-negro.jpg",
-                            "img/relojes/invicta/invicta-plateado.jpeg",
-                            
-                            
-                            
-                        ],
-                    
-                        
-                    
-                        opcion2Nombre:"Talla",
-                    
-                        opcion2:[
-                            "L",
-                            
-                        ],
-
-                       
-                    
-                    })'>
-                    Agregar al carrito
-                </button>
+                
             </div>
 
+            <div id="carrito-items"></div>
+                
             
-        </div>
-    </section> 
-     
-    <!-- PROMOCIONES -->
-    
-    <section id="promo-camisetas">
-        <h2>CAMISETAS</h2>
-        <div class="productos">
+            <div id="datos-cliente">
+                <h3><strong>INGRESE SUS DATOS</strong></h3>
+                <input type="text" id="nombreCliente"
+                placeholder="Nombre completo">
+
+                <input type="text" id="documentoCliente"
+                placeholder="Documento">
+
+                <input type="text" id="telefonoCliente"
+                placeholder="Teléfono">
+
+                <input type="text" id="direccionCliente"
+                placeholder="Dirección">
+
+                <select id="metodoPago">
+                    <option>Efectivo</option>
+                    <option>Nequi</option>
+                    <option>Daviplata</option>
+                    <option>Transferencia</option>
+                </select>
 
-            
-
-            <div class="producto">
-                <img src="img/camisetas/armani/polo-armani-negro.jpg" alt="">
-
-                <h3>ARMANI</h3>
-
-                <p>$74,900</p>
-
-                <button onclick='abrirProducto({
-
-                    nombre:"Camiseta armani",
-                    precio:74900,
-                    imagenes:[
-                        "img/camisetas/armani/polo-armani-negro.jpg",
-                        
-                        
-                    ],
-
-                    tallas:["L"],
-
-                    colores:[
-                        "Negro",
-                        
-                        
-                    ],
-                    
-                    coloresHex:[
-                    
-
-                        COLORES.negro,
-                        
-              
-                    ]
-                    
-
-                    
-                    
-                })'>Agragar al carrito</button>
-
-            </div>
-            
-            
-
-
-        </div>
-    </section>
-    <!-- CAMISETAS -->
-    <!-- BOSS -->
-    <section id="boss">
-
-        <h2>BOSS</h2>
-        
-
-        <div class="productos">
-
-            
-            <div class="producto">
-
-                <img src="img/camisetas/hugo-boss/boss-blanca.jpeg" alt="">
-                <h3>BOSS </h3>
-                <p>$74.900</p>
-
-                <button onclick='abrirProducto({
-
-                    nombre:"Camiseta Boss blanca",
-
-                    precio:74900,
-
-                    imagenes:[
-                        
-                        "img/camisetas/hugo-boss/boss-blanca.jpeg"
-                    ],
-
-                    tallas:["L"],
-
-                    colores:[
-                        
-                        
-                        "Blanco"
-                    ],
-                    
-                    coloresHex:[
-                    
-
-                        
-                        
-                        COLORES.blanco
-              
-                    ]
-
-                })'>
-                    Ver producto
-                </button>
-            </div>
-
-            <div class="producto">
-                <img src="img/camisetas/hugo-boss/camiseta-hugo-firma-negra.jpg" alt="">
-
-                <h3>BOSS</h3>
-
-                <p>$79,900</p>
-
-                <button onclick='abrirProducto({
-
-                    nombre:"Camiseta boss",
-                    precio:79900,
-                    imagenes:[
-                        "img/camisetas/hugo-boss/camiseta-hugo-firma-negra.jpg",
-                       
-                        
-                    ],
-
-                    tallas:["L"],
-
-                    colores:[
-                        "Negro",
-                        
-                        
-                    ],
-                    
-                    coloresHex:[
-                    
-
-                        COLORES.negro,
-                        
-              
-                    ]
-                    
-
-                    
-                    
-                })'>Agragar al carrito</button>
-
-            </div>
-
-            
-
-        </div>
-    
-    </section>
-
-    <!-- NIKE -->
-    <section id="nike">
-
-        <h2>NIKE</h2>
-        
-
-        <div class="productos">
-            
-            
-            <div class="producto">
-                <img src="img/camisetas/nike/nike-air.jpg" alt="">
-
-                <h3>NIKE</h3>
-
-                <p>$79,900</p>
-
-                <button onclick='abrirProducto({
-
-                    nombre:"Camiseta nike",
-                    precio:79900,
-                    imagenes:[
-                        "img/camisetas/nike/nike-air.jpg",
-                        
-                        
-                    ],
-
-                    tallas:["L"],
-
-                    colores:[
-                        "Negro",
-                        
-                        
-                    ],
-                    
-                    coloresHex:[
-                    
-
-                        COLORES.negro,
-                        
-              
-                    ]
-                    
-
-                    
-                    
-                })'>Agragar al carrito</button>
-
-            </div>
-            
-            <div class="producto">
-                <img src="img/camisetas/nike/nike-linea-gris.jpg" alt="">
-
-                <h3>NIKE</h3>
-
-                <p>$79,900</p>
-
-                <button onclick='abrirProducto({
-
-                    nombre:"Camiseta nike",
-                    precio:79900,
-                    imagenes:[
-                        "img/camisetas/nike/nike-linea-gris.jpg",
-                        
-                        
-                    ],
-
-                    tallas:["L"],
-
-                    colores:[
-                        "Gris",
-                        
-                        
-                    ],
-                    
-                    coloresHex:[
-                    
-
-                        COLORES.gris,
-                        
-              
-                    ]
-                    
-
-                    
-                    
-                })'>Agragar al carrito</button>
-
-            </div>
-            
-
-
-        
-        
-        </div>
-    </section> 
-    <!--UNDERGOLD-->
-    <section id="undergold">
-        <h2>UNDERGOLD</h2>
-        <div class="productos">
-            
-            
-            <div class="producto">
-                <img src="img/camisetas/undergold/undergold-cuellov-delante.jpg" alt="">
-
-                <h3>UNDERGOLD</h3>
-
-                <p>$74,900</p>
-
-                <button onclick='abrirProducto({
-
-                    nombre:"Camiseta undergold",
-                    precio:74900,
-                    imagenes:[
-                        "img/camisetas/undergold/undergold-cuellov-delante.jpg",
-                        "img/camisetas/undergold/undergold-cuellov-detras.jpg"
-                        
-                        
-                    ],
-
-                    tallas:["L"],
-
-                    colores:[
-                        "Blanco",
-                        
-                        
-                    ],
-                    
-                    coloresHex:[
-                    
-
-                        COLORES.blanco,
-                        
-              
-                    ]
-                    
-
-                    
-                    
-                })'>Agragar al carrito</button>
-
-            </div>
-
-            
-
-
-        </div>
-    </section>
-    <!--LACOSTE
-    <section id="lacoste">
-        <h2>LACOSTE</h2>
-
-        <div class="productos">
-            
-            <div class="producto">
-                <img src="img/camisetas/lacoste/lacoste-beige-blanco.jpg" alt="">
-
-                <h3>LACOSTE</h3>
-
-                <p>$79,900</p>
-
-                <button onclick='abrirProducto({
-
-                    nombre:"Camiseta lacoste",
-                    precio:79900,
-                    imagenes:[
-                        "img/camisetas/lacoste/lacoste-beige-blanco.jpg",
-                        
-                        
-                    ],
-
-                    tallas:["L"],
-
-                    colores:[
-                        "Beige",
-                        
-                        
-                    ],
-                    
-                    coloresHex:[
-                    
-
-                        COLORES.beige,
-                    
-              
-                    ]
-                    
-
-                    
-                    
-                })'>Agragar al carrito</button>
-
-            </div>
-        </div>
-    </section>-->
-    <!--MONASTERY 
-    <section id="monastery">
-        <h2>MONASTERY</h2>
-
-        <div class="productos">
-            <div class="producto">
-                <img src="img/camisetas/monastery/monastery-delante.jpg" alt="">
-
-                <h3>MONASTERY</h3>
-
-                <p>$69,900</p>
-
-                <button onclick='abrirProducto({
-
-                    nombre:"Camiseta Monastery",
-                    precio:69900,
-                    imagenes:[
-                        "img/camisetas/monastery/monastery-delante.jpg",
-                        "img/camisetas/monastery/monastery-detras.jpg"
-                        
-                    ],
-
-                    tallas:["L"],
-
-                    colores:[
-                        "Blanca",
-                        
-                        
-                    ],
-                    
-                    coloresHex:[
-                    
-
-                        COLORES.blanco,
-                        
-              
-                    ]
-                    
-
-                    
-                    
-                })'>Agragar al carrito</button>
-
-            </div>
-
-            
-        </div>
-    </section>-->
-
-
-
-    <!-- RELOJES -->
-    <!-- ROLEX -->
-    <section id="rolex">
-
-        <h2>ROLEX</h2>
-
-        <div class="productos">
-
-            <div class="producto">
-
-                <img src="img//relojes/rolex/rolex-dejuv-negro.jpeg" alt="">
-                <h3>Rolex Dejuv</h3>
-                <p>$79.900</p>
-
-                <button onclick="agregarCarrito(
-                    'Rolex',
-                    79900,
-                    'img/relojes/rolex/rolex-dejuv-negro.jpeg'
-                    )">
-                    Agregar al carrito
-                </button>
-
-            </div>
-            
-            
-            <div class="producto">
-
-                <img src="img//relojes/rolex/rolex-land-d-weller.jpeg" alt="">
-                <h3>Rolex Land D-Weller</h3>
-                <p>$129.900</p>
-
-                <button onclick="agregarCarrito(
-                    'Rolex',
-                    129900,
-                    'img/relojes/rolex/rolex-land-d-weller.jpeg'
-                    )">
-                    Agregar al carrito
-                </button>
-
-            </div>
-            
-        </div>    
-    </section>
-    <!--INVICTA-->
-    <section id="invicta">
-        <h2>INVICTA</h2>
-        <div class="productos">
-            <div class="producto">
-
-                <img src="img//relojes/invicta/invicta-plateado.jpeg" alt="">
-                <h3>Invicta</h3>
-                <p>$79.900</p>
-
-                <button onclick="agregarCarrito(
-                    'Invicta',
-                    79900,
-                    'img/relojes/rolex/rolex-dejuv-negro.jpeg'
-                    )">
-                    Agregar al carrito
-                </button>
-
-            </div>
-        </div>
-
-    </section>
-  
-    <!-- PERFUMES -->    
-    <!-- AMADERADOS -->    
-    <section id="amaderadas">
-
-        <h2>AMADERADAS</h2>
-
-        <div class="productos">
-
-            <div class="producto">
-
-                <img src="img/perfumes/portada-perfumes.jpg" alt="">
-                <h3>Amaderadas</h3>
                 
 
-                <button onclick='abrirProducto({
-
-                        nombre:"Perfume",
-                    
-                        precio:30000,
-                    
-                        imagenes:[
-                            "img/perfumes/frasco-30ml.jpeg",
-                            "img/perfumes/frasco-50ml.jpeg",
-                            "img/perfumes/frasco-100ml.jpeg"
-                        ],
-                    
-                        opcion1Nombre:"Fragancia",
-                    
-                        opcion1:[
-                            "9PM",
-                            "Santal 33",
-                            "Valentino Born Roma",
-                            "Bad boy"
-                            
-                        ],
-                    
-                        opcion2Nombre:"Mililitros",
-                    
-                        opcion2:[
-                            "30ml",
-                            "50ml",
-                            "100ml"
-                        ],
-
-                        precios:[
-                            25000,
-                            38000,
-                            50000
-                        ]
-                    
-                    })'>
-                    Agregar al carrito
-                </button>
-
             </div>
+            
+
         </div>
-    </section>
-    <!-- DULCES -->    
-    <section id="dulces">
 
-        <h2>DULCES</h2>
+        
+        <header>
 
-        <div class="productos">
+                <div class="menu-icon"
+                onclick="abrirMenu()">
 
-            <div class="producto">
-
-                <img src="img/perfumes/portada-perfumes.jpg" alt="">
-                <h3>Dulces</h3>
-                
-
-                <button onclick='abrirProducto({
-
-                        nombre:"Perfumes",
-                    
-                        precio:30000,
-                    
-                        imagenes:[
-                            "img/perfumes/frasco-30ml.jpeg",
-                            "img/perfumes/frasco-50ml.jpeg",
-                            "img/perfumes/frasco-100ml.jpeg"
-                        ],
-                    
-                        opcion1Nombre:"Fragancia",
-                    
-                        opcion1:[
-                            "Lataffa Amathyst",
-                            "Arabians Tonka",
-                            "Orientica Amber Rouge",
-                            "Lataffa Honor & Glory",
-                            "Eros",
-                            "Asad Negra",
-                            "Khamrah",
-                            "Sublime",
-                            "Mandarin Sky",
-                            "Le Male"
-                            
-                        ],
-                    
-                        opcion2Nombre:"Mililitros",
-                    
-                        opcion2:[
-                            "30ml",
-                            "50ml",
-                            "100ml"
-                        ],
-
-                        precios:[
-                            25000,
-                            38000,
-                            50000
-                        ]
-                    
-                    })'>
-                    Agregar al carrito
-                </button>
-
-            </div>
-        </div>
-    </section>        
-    <!-- CITRICAS -->    
-    <section id="citricas">
-
-        <h2>CITRICAS</h2>
-
-        <div class="productos">
-
-            <div class="producto">
-
-                <img src="img/perfumes/portada-perfumes.jpg" alt="">
-                <h3>Citricas</h3>
-                
-
-                <button onclick='abrirProducto({
-
-                        nombre:"Perfumes",
-                    
-                        precio:30000,
-                    
-                        imagenes:[
-                            "img/perfumes/frasco-30ml.jpeg",
-                            "img/perfumes/frasco-50ml.jpeg",
-                            "img/perfumes/frasco-100ml.jpeg"
-                        ],
-                    
-                        opcion1Nombre:"Fragancia",
-                    
-                        opcion1:[
-                            "Issey Miyake",
-                            "CR7",
-                            "Silver Creed",
-                            "212 VIP",
-                            "Club de Nuit",
-                            "Sauvage",
-                            "Acqua Di Gio",
-                            "Lacoste red",
-                            "Le Beu"
-                            
-                        ],
-                    
-                        opcion2Nombre:"Mililitros",
-                    
-                        opcion2:[
-                            "30ml",
-                            "50ml",
-                            "100ml"
-                        ],
-
-                        precios:[
-                            25000,
-                            38000,
-                            50000
-                        ]
-                    
-                    })'>
-                    Agregar al carrito
-                </button>
-
-            </div>
-        </div>
-    </section>    
-
-    
-    <div id="modalProducto" class="modal">
-
-        <div class="modal-contenido">
-
-            <span class="cerrar-modal"
-                onclick="cerrarModal()">
-                ×
-            </span>
-
-            <div class="producto-modal">
-
-                <div>
-
-                    <img id="imgPrincipal"
-                        class="imagen-principal">
-
-                    <div id="galeria"
-                        class="galeria">
-                    </div>
+                    ☰
 
                 </div>
 
-                <div class="info-producto">
 
-                    <h2 id="nombreModal"></h2>
+                <h1 class="logo">
+                    <a href="#inicio">Zona Style</a>
+                </h1>
 
-                    <div id="precioModal"
-                        class="precio-modal">
+                <div class="icons">
+
+                    <input
+                    type="text"
+                    id="buscador"
+                    placeholder="Buscar..."
+                    onkeyup="if(event.key==='Enter') buscarProductos()">
+                </div>
+
+                <span class="carrito-icon"
+                onclick="abrirCarrito()">
+                    🛒 
+                    <span id="contador">0</span>
+                </span>
+
+            </div>
+
+        </header>    
+
+            <!-- MENU LATERAL -->
+
+            <div id="menu-lateral">
+
+                <button onclick="abrirMenu()">X</button>
+
+                <div class="categoria">
+                    <a href="#inicio"><h3>Inicio</h3></a>
+                </div>
+
+                <div id="menu-categorias-supabase">
+                    <p>Cargando categorías...</p>
+                </div>
+
+            </div>
+        <!-- BANNER -->
+        <section class="carrusel-banner">
+
+            <div class="slide activo">
+        
+                <img src="img/banners/banner-zona-style.png">
+        
+            </div>
+        
+            <div class="slide">
+        
+                <img src="img/banners/banner-promo.jpg">
+        
+                <div class="contenido-banner">
+        
+                    <h2>Promociones Exclusivas</h2>
+        
+                    <a href="#catalogo-supabase" class="btn-banner">
+                        Ver Promo
+                    </a>
+        
+                </div>
+        
+            </div>
+        
+            <div class="slide">
+        
+                <img src="img/banners/banner-relojs.jpg">
+        
+                <div class="contenido-banner">
+        
+                    <h2>Relojs De La Mejor Calidad</h2>
+        
+                    <a href="#seccion-relojes" class="btn-banner">
+                        Ver Relojs
+                    </a>
+        
+                </div>
+        
+            </div>
+        
+            <div class="slide">
+        
+                <img src="img/banners/banner-perfumes.jpg">
+        
+                <div class="contenido-banner">
+        
+                    <h2>Las Mejores Fragancias</h2>
+        
+                    <a href="#seccion-lociones" class="btn-banner">
+                        Ver Perfumes
+                    </a>
+        
+                </div>
+        
+            </div>
+        
+            <div class="slide">
+        
+                <img src="img/banners/banner-marcas.jpg">
+        
+                <div class="contenido-banner">
+        
+                    <h2>Las Mejores Marcas exclusivas</h2>
+        
+                    <a href="#seccion-camisetas" class="btn-banner">
+                        Ver Productos
+                    </a>
+        
+                </div>
+        
+            </div>
+            <button class="nav-banner prev">❮</button>
+            <button class="nav-banner next">❯</button>
+
+            <div class="indicadores"></div>
+        </section>
+    <div class="carrusel-promos">
+
+        <div class="promo activa">
+            🔥 LA MEJOR CALIDAD
+        </div>
+
+        <div class="promo">
+            ⌚ RELOJES DESDE $79.900
+        </div>
+
+        <div class="promo">
+            🚚 ENVÍOS A TODO COLOMBIA
+        </div>
+
+        <div class="promo">
+            💳 PAGA CONTRA ENTREGA
+        </div>
+
+    </div>
+        <!-- CATÁLOGO DE SUPABASE -->
+        <section id="catalogo-supabase">
+            <div id="productos-supabase" class="productos">
+                <p>Cargando productos...</p>
+            </div>
+        </section>
+
+
+        
+        <div id="modalProducto" class="modal">
+
+            <div class="modal-contenido">
+
+                <span class="cerrar-modal"
+                    onclick="cerrarModal()">
+                    ×
+                </span>
+
+                <div class="producto-modal">
+
+                    <div>
+
+                        <img id="imgPrincipal"
+                            class="imagen-principal">
+
+                        <div id="galeria"
+                            class="galeria">
+                        </div>
+
                     </div>
 
-                    <p class="descripcion">
-                        Producto premium de alta calidad.
-                    </p>
+                    <div class="info-producto">
 
-                    <div id="tituloOpcion1" class="subtitulo">
-                        Tallas
-                    </div>
-                    
-                    <div id="contenedorTallas" class="tallas"></div>
-                    
-                    <div id="tituloOpcion2" class="subtitulo">
-                        Colores
-                    </div>
-                    
-                    <div id="contenedorColores" class="colores"></div>
-                                       
+                        <h2 id="nombreModal"></h2>
 
-                    <button class="btn-modal"
-                            onclick="agregarDesdeModal()">
-                        Agregar al carrito
-                    </button>
+                        <div id="precioModal"
+                            class="precio-modal">
+                        </div>
+
+                        <p class="descripcion">
+                            Producto premium de alta calidad.
+                        </p>
+
+                        <div id="tituloOpcion1" class="subtitulo">
+                            Tallas
+                        </div>
+                        
+                        <div id="contenedorTallas" class="tallas"></div>
+                        
+                        <div id="tituloOpcion2" class="subtitulo">
+                            Colores
+                        </div>
+                        
+                        <div id="contenedorColores" class="colores"></div>
+                                        
+
+                        <button class="btn-modal"
+                                onclick="agregarDesdeModal()">
+                            Agregar al carrito
+                        </button>
+
+                    </div>
 
                 </div>
 
@@ -1203,32 +271,38 @@
 
         </div>
 
-    </div>
+        <a href="https://api.whatsapp.com/send?phone=573203109943"
+            class="whatsapp-float"
+            target="_blank">
 
-    <a href="https://api.whatsapp.com/send?phone=573203109943"
-        class="whatsapp-float"
-        target="_blank">
+            <img src="img/whatsapp.png" alt="WhatsApp">
 
-        <img src="img/whatsapp.png" alt="WhatsApp">
+        </a>
 
-    </a>
+        <a href="https://www.instagram.com/zona_stylee_/"
+            
+            class="instagram-float"
+            target="_blank" >
 
-       <a href="https://www.instagram.com/zona_stylee_/"
-           
-        class="instagram-float"
-        target="_blank" >
+            <img src="img/instagram.png" alt="Instagram">
 
-        <img src="img/instagram.png" alt="Instagram">
-
-    </a>
+        </a>
 
 
-    <script src="colores.js"></script>
-    <script src="js/script.js"></script>
+        <script src="colores.js"></script>
+        <script src="js/script.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-</body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+        <!-- Biblioteca de Supabase -->
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+        <!-- Configuración de conexión -->
+        <script src="js/supabase-config.js"></script>
+        <script src="js/secciones-config.js"></script>
+        <script src="js/catalogo.js"></script>
+    </body>
 
 </html>
